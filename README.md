@@ -224,6 +224,38 @@ require(["template"],function(template){
                         //b-->点击讲师管理按钮
                 }})
 
+### 编辑讲师
++ 找到功能的入口：编辑讲师按钮：给按钮绑定单击事件
+    - 给每一个编辑按钮指定一个类名：btn-edit
+    - 事件绑定在div.panel中，通过事件委托让编辑按钮触发
++ 事件触发的时候，弹出模态框
+    - 准备一个模态框的模板
+    - 通过text插件获取模板内容
+    - 通过ajax获取讲师原来的数据
+        - url:/api/teacher/edit
+        - type:get
+        - data:{tc_id: 获取按钮的父元素中tc_id属性值 }
+        - success:function(res){
+
+        }
+    - 把数据放到模板中：arttemplate编译模板传入数据，获取真实内容
+        - var html=template.render(模板内容,数据)
+    - 把真实内容放到页面中，并且以模态框的形式呈现出来
+
++ 点击模态框中的提交按钮，把数据提交到服务器中，提供成功刷新讲师列表
+    - 异步的提交-->把表单设置成异步的：给表单绑定submit事件，通过事件对象的e.preventDefault();
+    - 获取表单数据：
+        - var formData=$(this).serialize();     //每一个表单具有指定的name属性
+    - 把数据通过ajax发送到服务器中
+        - $.ajax({
+            url:"/api/teacher/update",
+            type:"post",
+            data:formData,
+            success:function(res){
+                //成功之后就刷新讲师列表
+            }
+        })
+
 ### es5之前要获取当前函数本身，可以在函数体内部通过arguments.callee
 + es5规定了严格模式，严格模式中禁止使用callee/caller
 + 在严格模式下面如何获取当前函数？
