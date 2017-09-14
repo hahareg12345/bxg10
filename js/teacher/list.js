@@ -89,8 +89,9 @@ define([
                     })
                     //编辑讲师
                     .on("click",".btn-edit",function(){
+                        var tc_id=$(this).parent().attr("tc_id");
 
-                        teacherEdit();
+                        teacherEdit(tc_id);
                     })
 
 

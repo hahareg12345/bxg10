@@ -10,32 +10,46 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">姓名</label>
                         <div class="col-sm-10">
-                            <input type="text" name="tc_name" class="form-control">
+                            <input type="text" name="tc_name" value="{{tc_name}}" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">性别</label>
                         <div class="col-sm-10">
-                            <label class="radio-inline">
-                                <input type="radio" name="tc_gender" value="0" checked="checked"> 男
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="tc_gender" value="1"> 女
-                            </label>
+                            {{if(tc_gender==0)}}
+                                <label class="radio-inline">
+                                    <input type="radio" name="tc_gender" value="0" checked="checked"> 男
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="tc_gender" value="1"> 女
+                                </label>
+                            {{else}}
+                                <label class="radio-inline">
+                                    <input type="radio" name="tc_gender" value="0" > 男
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="tc_gender" value="1" checked="checked"> 女
+                                </label>
+                            {{/if}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">入职日期</label>
                         <div class="col-sm-10">
-                            <input type="text" name="tc_join_date" class="form-control date-join">
+                            <input type="text" name="tc_join_date" value="{{tc_join_date}}" class="form-control date-join">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">类型</label>
                         <div class="col-sm-10">
                             <select name="tc_type" class="form-control">
-                                <option value="1">讲师</option>
-                                <option value="0">管理员</option>
+                                {{if(tc_type==1)}}
+                                    <option value="1" selected="selected">讲师</option>
+                                    <option value="0">管理员</option>
+                                {{else}}
+                                    <option value="1">讲师</option>
+                                    <option value="0" selected="selected">管理员</option>
+                                {{/if}}
                             </select>
                         </div>
                     </div>
