@@ -24,7 +24,7 @@
       <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/teacher/list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
+            <state relative-caret-position="387">
               <caret line="93" column="41" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="41" />
               <folding>
                 <element signature="e#1125#1337#0" expanded="false" />
@@ -38,8 +38,8 @@
       <file leaf-file-name="edit.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/teacher/edit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+            <state relative-caret-position="187">
+              <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -48,7 +48,7 @@
       <file leaf-file-name="teacherEdit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpls/teacherEdit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
+            <state relative-caret-position="131">
               <caret line="50" column="86" selection-start-line="50" selection-start-column="86" selection-end-line="50" selection-end-column="86" />
               <folding />
             </state>
@@ -358,7 +358,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JavaScript" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="nodejs_interpreter_path" value="C:\Program Files\nodejs\node" />
     <property name="javascript.nodejs.core.library.configured.version" value="6.10.0" />
@@ -464,12 +464,12 @@
       <workItem from="1504928943799" duration="12795000" />
       <workItem from="1505090649820" duration="19326000" />
       <workItem from="1505176641793" duration="25190000" />
-      <workItem from="1505349281579" duration="7939000" />
+      <workItem from="1505349281579" duration="8368000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177082000" />
+    <option name="totallyTimeSpent" value="177511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -838,7 +838,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/teacher/list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
+        <state relative-caret-position="387">
           <caret line="93" column="41" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="41" />
           <folding>
             <element signature="e#1125#1337#0" expanded="false" />
@@ -879,7 +879,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpls/teacherEdit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
+        <state relative-caret-position="131">
           <caret line="50" column="86" selection-start-line="50" selection-start-column="86" selection-end-line="50" selection-end-column="86" />
           <folding />
         </state>
@@ -887,8 +887,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/teacher/edit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+        <state relative-caret-position="187">
+          <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
           <folding />
         </state>
       </provider>
