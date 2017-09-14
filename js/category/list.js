@@ -11,9 +11,16 @@ define([
 
 
     return function(){
-        //1、编译模板
-        var html=template.render(categoryListTpl,{});
-        //2、把内容放到页面中的指定位置
-        $(".main .content-container").html(html);
+        $.ajax({
+            url:"/api/category",
+            type:"get",
+            success:function(res){
+
+                //1、编译模板
+                var html=template.render(categoryListTpl,res);//传入res就可以在模板内容遍历result
+                //2、把内容放到页面中的指定位置
+                $(".main .content-container").html(html);
+            }
+        })
     }
 })

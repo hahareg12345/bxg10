@@ -21,7 +21,42 @@
                 </tr>
             </thead>
             <tbody>
+            {{each result v}}
+                <tr class="{{v.cg_pid==0?'info':''}}">
+                    <td>{{v.cg_name}}</td>
+                    <td>{{v.total}}</td>
+                    <td>{{v.cg_is_hide=="1"?"隐藏":"显示"}}</td>
+                    <td>{{v.cg_order}}</td>
+                    <td>
+                        <button class="btn btn-primary">编辑</button>
+                    </td>
+                </tr>
+            {{/each}}
 
+            <!--{{each result v}}-->
+                <!--{{if(v.cg_pid==0)}}-->
+                    <!--<tr class="info">-->
+                        <!--<td>{{v.cg_name}}</td>-->
+                        <!--<td>{{v.total}}</td>-->
+                        <!--<td>{{v.cg_is_hide=="1"?"隐藏":"显示"}}</td>-->
+                        <!--<td>{{v.cg_order}}</td>-->
+                        <!--<td>-->
+                            <!--<button class="btn btn-primary">编辑</button>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                <!--{{else}}-->
+                    <!--<tr>-->
+                        <!--<td>{{v.cg_name}}</td>-->
+                        <!--<td>{{v.total}}</td>-->
+                        <!--<td>{{v.cg_is_hide=="1"?"隐藏":"显示"}}</td>-->
+                        <!--<td>{{v.cg_order}}</td>-->
+                        <!--<td>-->
+                            <!--<button class="btn btn-primary">编辑</button>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                <!--{{/if}}-->
+
+            <!--{{/each}}-->
             </tbody>
         </table>
 
