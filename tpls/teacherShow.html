@@ -1,0 +1,49 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="modalTeacherShow">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">查看讲师</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>用户名</td>
+                            <td>{{result.tc_name}}</td>
+                            <td>职位</td>
+                            <td>讲师</td>
+                            <td rowspan="4">
+                                <img src="{{result.tc_avatar || 'imgs/pic.jpg'}}" alt="" width="80" height="80">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>花名</td>
+                            <td>{{result.tc_roster}}</td>
+                            <td>入职日期</td>
+                            <td>{{result.tc_join_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>性别</td>
+                            <td>{{result.tc_gender==0?"男":"女"}}</td>
+                            <td>出生日期</td>
+                            <td>{{result.tc_birthday}}</td>
+                        </tr>
+                        <tr>
+                            <td>手机号</td>
+                            <td>{{result.tc_cellphone}}</td>
+                            <td>邮箱</td>
+                            <td>{{result.tc_email}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">自我介绍：{{@result.tc_introduce}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

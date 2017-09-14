@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+</head>
+<body>
+    <input type="text" value="2017-09-12" class="date-join">
+
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script src="../assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script src="../assets/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script>
+    $('.date-join').datetimepicker({
+        //日期格式化
+        format: 'yyyy-mm-dd',
+
+        weekStart:1,        //一周从周一开始
+
+        daysOfWeekDisabled:[6,0],       //数组中是一个个数字，数字对应的周几，比如[6]表示周六不能选
+        //      0：周日  1：周一  。。。。  6：周六
+
+        minView:"month",     //最小视图就是月视图-->只能精确到某一天
+
+        autoclose:true,      //选择完日期之后自动关闭控件
+
+        language:"zh-CN",     //语言设置为中文，如果想要设置某个语言，必须先导入的语言包
+
+        todayBtn:true,          //显示"今天"按钮
+
+        todayHighlight:true     //在今天这个月内，如果选中的不是今天，告诉你今天是哪一天
+
+    });
+</script>
+</html>

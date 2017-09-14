@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script src="../js/lib/template-web.js"></script>
+<script id="tpl" type="text/html">
+    {{each result}}
+        <li>{{$value.tc_name}}</li>
+    {{/each}}
+</script>
+<script>
+    var res={
+        code:200,
+        msg:"ok",
+        result:[
+            {tc_name:"ccc"},
+            {tc_name:"ddd"}
+        ]
+    };
+
+    var html=template("tpl",res);
+
+    console.log(html);
+</script>
+</html>

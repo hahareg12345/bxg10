@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function getCookieByKey(key){
+        var result;
+
+        //1、把document.cookie分割成字符串数组
+        var arr=document.cookie.split("; ");    //["id=666","cname=abc","name=ccc","name3=ddd"]
+        //2、遍历数组
+        arr.forEach(function(value){        //value："name=666"
+            //判断value是否想要的
+            var keyValues=value.split("="); //["name","666"]        第一个元素就是键，第二个元素就是值
+            if(keyValues[0]==key){
+                result=keyValues[1];
+            }
+
+        });
+
+        return result;
+
+    }
+
+    var id=getCookieByKey("id");        //-->"666"
+    var name=getCookieByKey("name");      //-->"ccc"
+    console.log(id);
+    console.log(name);
+</script>
+</html>

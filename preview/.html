@@ -1,0 +1,523 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="-">博学谷项目介绍文档</h1>
+<h2 id="-http-doc-botue-com-">接口文档：<a href="http://doc.botue.com/">http://doc.botue.com/</a></h2>
+<h2 id="-">项目结构：</h2>
+<pre><code>bxg10/
+    css/
+        .less
+    js/
+        teacher/
+            list.js
+            add.js
+        lib/        第三方独立的js文件
+            jquery.js
+            template-web.js
+            echarts.js
+    imgs/   存放图片
+    tpls/   存放模板文件
+        teacherAdd.html
+        courseAdd.html
+    assets/     存放第三方不仅仅有js，还有其他一系列文件的项目
+        bootstrap/
+    index.html  项目的主页(用requirejs管理的
+    login.html  登录页(并不使用requirejs)
+</code></pre><h2 id="requirejs-shim">requireJS中什么时候使用shim</h2>
+<ul>
+<li>shim只用于第三方模块</li>
+<li>shim一般适用于：a、引入了2个第三方模块，b、之间存在依赖，c、其中一个不支持AMD规范<ul>
+<li>例如：导入了jquery/bootstrap，bootstrap依赖了jquery，bootstrap不支持AMD规范，所以采用了shim</li>
+</ul>
+</li>
+</ul>
+<h2 id="bootstrap-">bootstrap布局</h2>
+<ul>
+<li><p>表格布局中</p>
+<ul>
+<li><code>&lt;td rowspan=&quot;5&quot;&gt;111&lt;/td&gt;</code>  表示该列跨了5行</li>
+<li><code>&lt;td colspan=&quot;3&quot;&gt;555&lt;/td&gt;</code>  表示该列跨了5列</li>
+</ul>
+</li>
+<li><p>在bootstrap中给一个标签设置一个类名为text-center就可以自动实现：<code>文字</code>水平居中</p>
+</li>
+<li>按钮<ul>
+<li>给一个按钮设置一个btn-success  --&gt;按钮呈现绿色的背景</li>
+<li>。。。。。。。。。btn-block    --&gt;按钮的宽度=容器的宽度</li>
+</ul>
+</li>
+<li>面板<pre><code class="lang-html">&lt;div class=&quot;panel panel-default&quot;&gt;
+  &lt;div class=&quot;panel-heading&quot;&gt;面板标题&lt;/div&gt;
+  &lt;div class=&quot;panel-body&quot;&gt;面板内容&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li>表格<pre><code class="lang-html">&lt;table class=&quot;table table-bordered table-hover&quot;&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;td&gt;aaa&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;bbb&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ccc&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+</li>
+</ul>
+<h2 id="jquery-">jquery事件绑定</h2>
+<ul>
+<li>每一次提交表单都会触发表单的submit事件</li>
+<li>如果想要阻止某个事件的默认行为：<ul>
+<li>1、事件回调函数有一个参数，表示事件对象(e)，通过e.preventDefault()实现</li>
+<li>2、在事件回调函数最后：return false;</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">博学谷项目中模态框模板必须只能有一个根节点</h2>
+<ul>
+<li>多一个文本，多一个注释都不行</li>
+</ul>
+<h2 id="-">登录练习可能产生错误</h2>
+<ol>
+<li>查看login的http请求有没有发送</li>
+<li>查看请求的FormData核对有没有以下2个字段<ul>
+<li>tc_pass</li>
+<li>tc_name</li>
+</ul>
+</li>
+<li>核对字段的值</li>
+</ol>
+<h2 id="-">跨页面传值</h2>
+<ul>
+<li><p>get请求的参数</p>
+<ul>
+<li>在页面跳转的时候，把要传递的参数作为url请求路径的一部分
+location.href=&quot;index.html?id=666&amp;age=18&quot;;</li>
+<li>在目标页面，通过location.search到相关参数
+location.search--&gt;&quot;?id=666&amp;age=18&quot;</li>
+</ul>
+</li>
+<li><p>h5中新增了本地存储技术：localStorage/sessionStorage</p>
+<ul>
+<li><p>sessionStorage是会话级的存储时间  / localStorage永久存储</p>
+</li>
+<li><p>存储数据：localStorage.setItem(&quot;键&quot;,&quot;值&quot;)</p>
+<ul>
+<li>切记：所有的值都应该是一个字符串类型的值，如果不是字符串类型，方法内部会把该值转换为字符串类型存储<ul>
+<li>特殊情况：传递数字也可以  100--&gt;&quot;100&quot;  &quot;100&quot;--&gt;&quot;100&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>cookie</p>
+<ul>
+<li>前提：必须要在同一个域名下面的不同页面</li>
+<li>cookie的2种类型：<ul>
+<li>会话cookie：cookie会在每一次会话之后之后删除</li>
+<li>长期cookie：cookie保存一段时间</li>
+</ul>
+</li>
+<li>原生JS：<ul>
+<li>设置一个会话cookie：document.cookie=&quot;id=888&quot;;</li>
+<li>设置一个长期cookie：document.cookie=&quot;name=ccc;expires=&quot;+new Date(&quot;2017-09-12 08:00:00&quot;);</li>
+<li>获取cookie：document.cookie：获取到当前域名下面的所有cookie值</li>
+</ul>
+</li>
+<li>jquery.cookie.js操作cookie<ul>
+<li>jquery.cookie.js依赖于jquery</li>
+<li>设置一个会话cookie:$.cookie(&quot;键&quot;,&quot;值&quot;)</li>
+<li>设置一个长期cookie：$.cookie(&quot;键&quot;,&quot;值&quot;,{ expires:日期类型或者数字类型 })</li>
+<li>获取cookie：$.cookie(&quot;键&quot;)</li>
+<li>移除一个cookie：$.removeCookie(&quot;键&quot;)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>服务器端：session</p>
+</li>
+</ul>
+<h2 id="-">对象的序列化和反序列化</h2>
+<ul>
+<li>JSON.stringify(对象)：将一个对象序列化为一个json数据</li>
+<li>JSON.parse(&quot;json数据&quot;)：将一个json数据转化为一个对象</li>
+</ul>
+<h2 id="-2-2-amd-amd-">如果引用了2个第三方模块，2个第三方模块都支持AMD规范，那么就可以使用AMD规范中的写法</h2>
+<ul>
+<li>把依赖项放在数组中<ul>
+<li>举例<ul>
+<li>cart.js依赖了product.js+shop.js</li>
+<li>在cart.js文件中，通过以下代码实现模块依赖<pre><code class="lang-js">define([&quot;product&quot;,&quot;shop&quot;],function(){})
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">项目类型</h2>
+<ul>
+<li>企业级项目：企业内部员工，企业客户--&gt;ERP/OA/CRM/CMS/财务网站<ul>
+<li>所有的企业级项目都必须登录才能访问</li>
+</ul>
+</li>
+<li>互联网项目：全部互联网用户</li>
+</ul>
+<h2 id="requirejs-arttemplate-">requirejs中使用arttemplate模板引擎</h2>
+<ul>
+<li>1、把代码放到项目中的指定位置</li>
+<li>2、配置模板引擎的路径</li>
+<li>3、在需要编译模板的文件中导入该模块，可以通过形参获取模板引擎的入口函数
+```js
+require([&quot;template&quot;],function(template){
+  //这里的形参template就是arttemplate模板引擎的入口函数
+  //1、常用的API
+  //1.1、template(script的id,数据)
+  //1.2、template.render(模板内容,数据)
+  //</li>
+</ul>
+<p>})</p>
+<pre><code>
+## 功能的实现思路
+### 渲染讲师列表
++ 0、拼接DOM
++ 1、模板渲染
+    - a、把页面结构放到模板中，写arttemplate的语法
+        - 。。。
+        ```html
+        &lt;script id=&quot;tplTeacherList&quot;&gt;
+                    &lt;table&gt;
+                        {{each result}}
+                            //$value是数组中每一个元素
+                            //要获取用户名：$value.tc_name
+                            &lt;tr&gt;
+                                &lt;td&gt;{{$value.tc_name}}&lt;/td&gt;
+                            &lt;/tr&gt;
+                        {{/each}}
+                    &lt;/table&gt;
+                &lt;/script&gt;
+</code></pre><pre><code>- b、
+    - i&gt;通过ajax获取数据
+        - $.ajax({ url:&quot;/api/teacher&quot;,type:&quot;get&quot;,success:function(res){
+            //res：接受了接口的返回值：响应的结果
+
+            - ii&gt;var html=template(&quot;script的id&quot;,res);
+
+            - c、把html添加到页面中指定位置：$(&quot;.main .content-container&quot;).html(html);
+        } })
+</code></pre><h3 id="-">链式编程</h3>
+<ul>
+<li>$(&quot;div&quot;).css(&quot;color&quot;,&quot;red&quot;).attr(&quot;tc_id&quot;,666)</li>
+</ul>
+<h3 id="-">注销/启用讲师</h3>
+<ul>
+<li>1、找到功能的入口：点击注销/启用按钮<ul>
+<li>给按钮指定一个类名：btn-status</li>
+<li>事件绑定在div.panel中，通过委托让按钮触发：</li>
+</ul>
+</li>
+<li>2、事件触发的时候<ul>
+<li>a、修改服务器中该用户的状态值
+  $.ajax({ url:&quot;/api/teacher/handle&quot; type:&quot;post&quot;,data: {<pre><code>  tc_id:按钮的父元素找到tc_id,
+  tc_status:也在页面渲染的时候把tc_status保存起来然后再获取,
+</code></pre>  },success:function(res){<pre><code>      //res.result.tc_status：表示用户最新的状态值
+      //把最新的状态值渲染到页面中
+</code></pre>  } })</li>
+<li>b、修改表格中显示的文本</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">添加讲师</h3>
+<ol>
+<li>找到功能的入口：点击添加讲师按钮<ul>
+<li>给添加讲师按钮绑定事件<ul>
+<li>给添加讲师按钮设置一个类名</li>
+<li>事件绑定在div.panel中，通过委托让按钮触发：$(&quot;div.panel&quot;).on(&quot;click&quot;,&quot;.btn-add&quot;,function(){})</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>事件触发的时候，弹出模态框</p>
+<ul>
+<li>先准备一个模态框的模板</li>
+<li>使用text插件获取模板内容</li>
+<li><p>把该内容放到页面中，并且以模态框的形式呈现出来，绑定hidden.bs.modal事件在事件中删除模态框</p>
+<ul>
+<li><p>点击提交，把数据提交到服务器中</p>
+<ul>
+<li>a、把同步的表单作为异步的表单(页面整个刷新--&gt;局部刷新)<ul>
+<li>给表单绑定submit事件，通过事件回调函数的形参e：e.preventDefault();</li>
+</ul>
+</li>
+<li>b、获取数据<ul>
+<li>找到文档中添加讲师对应的接口，看接口请求的参数，找到每一个name值，把该name值一一对应的写在每一个表单元素上</li>
+<li>var formData=$(&quot;form&quot;).serialize();</li>
+</ul>
+</li>
+<li><p>c、发送ajax请求</p>
+<ul>
+<li><p>$.ajax({url:&quot;/api/teacher/add&quot;,type:&quot;post&quot;,data:formData,success:function(res){
+  //res:{code:200,msg:&quot;ok&quot;,time:12351324123}</p>
+<p>  //如果成功了？
+  //+先关闭模态框</p>
+<pre><code>  //$(模态框容器).modal(&quot;hide&quot;);
+</code></pre><p>  //+然后刷新讲师列表页面</p>
+<pre><code>  //a--&gt;调用list.js实现刷新功能
+  //b--&gt;点击讲师管理按钮
+</code></pre><p>}})</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="es5-arguments-callee">es5之前要获取当前函数本身，可以在函数体内部通过arguments.callee</h3>
+<ul>
+<li>es5规定了严格模式，严格模式中禁止使用callee/caller</li>
+<li>在严格模式下面如何获取当前函数？<pre><code class="lang-js">  (function fn3(){
+      //fn3是一个&quot;特殊的名字&quot;，这个名字在外界访问不是一个函数名，在函数体内部访问就指向了当前函数本身
+  })()
+</code></pre>
+</li>
+<li>面试题
+```js
+var f1=function f5(){
+  //在函数体内部f1和f2都指向该函数
+  console.log(f1===f5);   //true</li>
+</ul>
+<p>};
+console.log(typeof f1);     //f1是一个函数,--&gt;&quot;function&quot;
+console.log(typeof f2);     //f2不存在，--&gt;&quot;undefined&quot;
+```</p>
+<h3 id="-">查看讲师实现思路：</h3>
+<ol>
+<li>找到功能的入口，点击查看按钮<ul>
+<li>给每一个查看按钮绑定单击事件<ul>
+<li>事件绑定在div.panel中，通过委托让每一个查看按钮触发：$(&quot;div.panel&quot;).on(&quot;click&quot;,&quot;.btn-show&quot;,function(){})</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>事件触发的时候，弹出模态框？<ul>
+<li>先准备一个模态框的模板页面</li>
+<li>通过text插件获取模板页面的内容</li>
+<li>通过ajax获取该讲师的数据<ul>
+<li>/api/teacher/view</li>
+<li>tc_id：在编译列表的时候把tc_id作为一个属性存储起来</li>
+</ul>
+</li>
+<li>将数据通过arttemplate编译到模板中，获取到真实内容</li>
+<li>把内容以模态框的形式添加到页面中<ul>
+<li>$(html).appendTo(&quot;body&quot;).modal();</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="-cookie-">老师可以把cookie再举多一个例子帮助消化吗?</h2>
+<h3 id="cookie-jquery-cookie-js">cookie的用法--&gt;jquery.cookie.js</h3>
+<ul>
+<li>设置一个会话cookie<ul>
+<li>$.cookie(键,值)        --&gt;值应该是一个字符串类型或者数字类型</li>
+</ul>
+</li>
+<li>设置一个长期cookie<ul>
+<li>$.cookie(键,值,{ expires:数字类型或者是日期类型的（过期时间） })</li>
+</ul>
+</li>
+<li>获取一个cookie<ul>
+<li>$.cookie(键)</li>
+</ul>
+</li>
+<li>移除cookie<ul>
+<li>$.removeCookie(键)</li>
+</ul>
+</li>
+</ul>
+<h3 id="cookie-">cookie的用途</h3>
+<ul>
+<li>保存一些需要在多个页面中访问的数据(&gt;=2个页面)<ul>
+<li>对于一些有效性要求很高的数据不能使用cookie存储，比如：表格中的数据</li>
+<li>可以保存当前登陆用户的一些信息：用户的头像、用户名、用户id，可能会在多个页面中访问</li>
+</ul>
+</li>
+<li>不能保存安全性较高的内容</li>
+<li><p>保存的数据大小也是有限制的(不要保存数据太大的内容)</p>
+</li>
+<li><p>后端：session 用来保存登录状态</p>
+</li>
+<li>用户的id来进行判断当前用户是谁</li>
+</ul>
+<h2 id="-">对什么时候有返回值，要接收返回值不清楚。</h2>
+<ul>
+<li>自己写的模块：如果按需加载的模块一定是通过返回值来实现，立即执行的代码有没有返回值都无所谓，如果分不清，所有的模块都有返回值</li>
+<li>第三方模块：<ul>
+<li>日常没有requirejs，如果是全局函数作为功能的入口，那么如果该模块支持了AMD规范，那么一定是有返回值的，返回值就是那个全局函数<ul>
+<li>例子：jquery/echarts/arttemplate</li>
+</ul>
+</li>
+<li>第三方模块，不支持AMD规范，肯定没有返回值</li>
+<li>第三方模块，支持了AMD规范，但是它的入口是其他文件提供的，那么该模块也没有返回值，<ul>
+<li>jquery.cookie    $.cookie 入口就是：$，$是jquery贡献出来的，</li>
+<li>bootstrap.js        $().modal() 入口就是：$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">面试题：</h2>
+<h3 id="call-apply-">call/apply的异同？</h3>
+<h3 id="localstorage-sessionstorage-">localStorage/sessionStorage的区别</h3>
+<h3 id="h5-">h5新特性</h3>
+<h3 id="post-get-">post/get请求之间的区别？</h3>
+<ul>
+<li>get请求的参数作为url地址的一部分</li>
+<li>get请求相对不太安全，常用于传入一些安全性不高的参数(id)</li>
+<li><p>get请求的地址受制于url长度的限制，参数大小有一定的限制</p>
+</li>
+<li><p>post请求的参数作为请求报文的一部分</p>
+</li>
+<li>post请求相对比较安全，常用语传入一些安全性较高的数据(密码、账号)</li>
+<li>post请求的参数大小几乎没有限制</li>
+</ul>
+<h3 id="localtion-">localtion对象常用的属性、方法</h3>
+<ul>
+<li>location.href=&quot;页面地址&quot;    页面跳转</li>
+<li>location.reload();        页面刷新</li>
+<li>location.search        获取get请求的参数    <a href="http://www.baidu.com?name=ccc&amp;id=666--&gt;&quot;?name=ccc&amp;id=666">http://www.baidu.com?name=ccc&amp;id=666--&gt;&quot;?name=ccc&amp;id=666</a>&quot;</li>
+<li>location.hash        获取锚点/锚名        <a href="http://www.baidu.com#ccc">http://www.baidu.com#ccc</a>    --&gt;&quot;#ccc&quot;</li>
+<li>location.protocol        获取协议的名称        <a href="http://www.baidu.com">http://www.baidu.com</a>    --&gt;&quot;http:&quot;</li>
+<li>location.pathname        获取路径名称</li>
+</ul>
+<h3 id="ajax-">ajax的优缺点</h3>
+<ul>
+<li>异步刷新--&gt;实现页面的局部刷新--&gt;只刷新页面的一部分内容<pre><code>                      --&gt;减少了资源的重复加载
+                          --&gt;1、页面响应速度有一定的提升(提升了用户体验)
+                          --&gt;2、降低了服务器的压力(最重要)
+</code></pre></li>
+<li>缺点：<ul>
+<li>不能跨域          --&gt;现在有了一些手段支持跨域：jsonp/反向代理/window.name</li>
+<li>对SEO不友好       SEO：搜索引擎优化<ul>
+<li>百度是如何收录你的网站的？</li>
+<li>如果通过搜索一个标题就能看到你网站指定内容<ul>
+<li>网络爬虫搜索某个网站的时候，不会执行任何JS代码--&gt;ajax自然也不会执行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不能进行页面导航( &lt;- -&gt;)</li>
+</ul>
+</li>
+</ul>
+<h3 id="-http-www-cnblogs-com-2050-p-3191744-html-">跨域的解决方案：(<a href="http://www.cnblogs.com/2050/p/3191744.html">参考网站</a>)</h3>
+<ul>
+<li>jsonp</li>
+<li>window.name</li>
+<li>iframe</li>
+<li>h5：window.postMessage</li>
+</ul>
+<h3 id="cookie-">cookie不能保存安全性较高的内容，因为这样的方式不安全</h3>
+<ul>
+<li>不能保存密码，尤其是不能明文保存密码<ul>
+<li>12306明文保存密码，数据库被攻陷了</li>
+</ul>
+</li>
+<li>甚至在一些安全性做的比较好的网站中，通过http请求发送密码的时候，会浏览器端进行加密，然后加密传输；在服务器中进行加密，加密存储在数据库中</li>
+</ul>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

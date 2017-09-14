@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="cookie2.html">cookie2</a>
+
+</body>
+<script>
+    //用cookie保存一个数据
+    document.cookie="id=666";
+
+    document.cookie="name=ccc";
+
+    //cookie值基于会话机制存储的，随着会话的结束，该cookie值就丢失了
+
+    //cookie也可以长期保存
+    document.cookie="age=18;expires="+new Date("2017-09-12 08:00:00");
+</script>
+</html>

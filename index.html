@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<!--左侧：侧边栏-->
+<div class="aside">
+    <!--个人简介区域-->
+    <div class="profile">
+        <div class="img-container">
+            <img src="imgs/pic.jpg" alt="" class="img-circle" width="80" height="80">
+        </div>
+        <h3 class="text-center"></h3>
+
+    </div>
+
+    <!--菜单栏-->
+    <div class="menu">
+        <div class="list-group">
+            <a href="#" item="teacher" class="list-group-item teacher-manager active">讲师管理</a>
+            <a href="#" item="course" class="list-group-item course-manager">课程管理</a>
+            <a href="#" item="category" class="list-group-item course-category">课程分类</a>
+            <a href="#" item="chart" class="list-group-item chart">图表统计</a>
+        </div>
+    </div>
+
+</div>
+<!--右侧：内容区-->
+<div class="main">
+    <!--头部-->
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-md-1">
+                    <!--字体图标-->
+                    <button class="btn btn-success btn-sm">
+                        <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="col-md-1 col-md-offset-9">
+                    <a href="">个人中心</a>
+                </div>
+                <div class="col-md-1">
+                    <a href="">退出</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--显示内容的地方-->
+    <div class="content-container">
+
+    </div>
+</div>
+
+</body>
+<script src="js/lib/require.js" data-main="main"></script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script src="../js/lib/template-web.js"></script>
+<script id="tpl" type="text/html">
+    {{each result}}
+        <li>{{$value.tc_name}}</li>
+    {{/each}}
+</script>
+<script>
+    var res={
+        code:200,
+        msg:"ok",
+        result:[
+            {tc_name:"ccc"},
+            {tc_name:"ddd"}
+        ]
+    };
+
+    //1、首先获取模板内容
+    var tpl=$("#tpl").html();
+    console.log(tpl);
+
+    //2、编译模板
+    var html=template.render(tpl,res);
+
+    console.log(html);
+</script>
+</html>

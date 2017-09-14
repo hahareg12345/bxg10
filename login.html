@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div class="form-container">
+    <form class="form-horizontal">
+        <h3 class="text-center">博学谷管理系统</h3>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">用户名</label>
+            <div class="col-sm-10">
+                <input type="text" name="tc_name" class="form-control" value="前端学院" placeholder="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-10">
+                <input type="password" name="tc_pass" class="form-control" value="123456" placeholder="">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-danger btn-block">登录</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+<script src="js/lib/jquery-2.1.4.js"></script>
+<script src="js/lib/jquery.cookie.js"></script>
+<script>
+    //什么时候才会有ajax请求？
+    //-->用户点击登录的时候发送ajax请求
+    //-->用户登录的时候，也就是提交了表单，所以要获取用户的信息，应该先给表单绑定submit事件
+    //      -->绑定事件成功，发现页面跳转，但是页面跳转，对于用户名和密码的校验就失败了，所以应该阻止页面跳转
+    //          -->因为submit事件的默认行为就是页面跳转，所以只需要阻止默认行为就可以阻止页面跳转
+    //              -->1、通过事件回调函数的参数：e.preventDefault();
+    //              -->2、在事件回调函数的末尾：return false;
+    $("form").on("submit",function(e){
+
+        var formData=$(this).serialize();           //每一个需要提交表单的元素都应该具有对应的name属性
+
+        $.ajax({
+            url:"/api/login",
+            type:"post",
+            data:formData,      //data属性可以是一个字符串类型，或者是一个对象类型，包含的都是表单信息
+            success:function(res){
+
+                if(res.code==200){
+                    //保存用户数据：位于res.result中
+
+                    var str=JSON.stringify(res.result);
+
+                    $.cookie("userInfo",str,{
+                        expires:1/24        //1小时
+                    });           //保存用户数据
+
+
+                    //登录成功？-->跳转到项目的主页
+                    location.href="index.html";
+
+                }else{
+                    //登录失败
+                    console.log(res.msg);
+                }
+            },
+            error:function(res){
+                console.log(res);
+            }
+
+        });
+
+        return false;//阻止默认行为
+
+    })
+
+
+
+
+//    $("form").on("submit",function(e){
+//
+//        $.ajax({
+//            url:"/api/login",
+//            type:"post",
+//            data:{
+//                tc_name:$("#txtUserName").val(),
+//                tc_pass:$("#txtPwd").val()
+//            },
+//            success:function(){
+//
+//            }
+//
+//        });
+//
+//        return false;//阻止默认行为
+//
+//    });
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //获取cookie值
+    console.log(document.cookie);       //获取当前域名下面的所有的cookie值："id=666; name=ccc; pgv_pvid=6821741090; Hm_lvt_e349bffa4f5a36ef03136c0d28d55563=1493100610"
+
+    //只想获取name？
+
+    function getCookieByKey(key){
+        var result;
+
+        var arr=document.cookie.split("; ");     //["id=666","cname=abc","name=ccc","name3=ddd"]
+        //如何通过该字符串数组获取name的cookie值
+        arr.forEach(function(value){
+            //value：元素的值
+
+            if(value.indexOf(key+"=")==0){      //不能>0  也不能<0
+
+                var len=(key+"=").length;       //"name"        -->从索引为5的位置开始截取     -->5=name的长度+"="的长度
+
+                result=value.substring(len);    //从该索引开始截取到字符串的最后一个字符
+                //result=value.substr(len);     //也可以实现
+
+                //return "";        //错误答案：return只能终止这一次匿名函数的执行，并不能终止getCookieByKey的执行
+            }
+
+
+        });
+        return result;
+    }
+
+    var id=getCookieByKey("id");        //-->"666"
+    var name=getCookieByKey("name");      //-->"ccc"
+    console.log(id);
+    console.log(name);
+
+</script>
+</html>

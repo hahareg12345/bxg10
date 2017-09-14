@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script src="../js/lib/jquery.cookie.js"></script>
+<script>
+    //设置一个会话cookie
+    $.cookie("gender","男")
+
+    //设置一个长期cookie
+    $.cookie("email","abc@qq.com",{
+        //expires的值可以是一个Date类型的对象，也可以是一个以天为单位的数字
+        expires:0.5
+    });
+
+    //获取一个cookie
+    console.log($.cookie("gender"));
+
+    //移除一个cookie        原理：设置一个比当前时间早的时间，就可以移除一个cookie
+    $.removeCookie("gender");
+</script>
+</html>
