@@ -39,11 +39,12 @@ require.config({
 require([
     "jquery",
     "teacher/list",
+    "category/list",        //分类列表
     "cookie",
     "bootstrap",
     "datetimepicker",        //日期控件
     "datetimepickerlang"     //日期控件的语言包
-],function($,teacherList){
+],function($,teacherList,categoryList){
     //template就是arttemplate模板引擎的入口函数
 
 
@@ -66,7 +67,8 @@ require([
                 break;
             //课程分类
             case "category":
-                $(".main .content-container").html("课程分类")
+                categoryList();
+
                 break;
             //图表统计
             case "chart":
