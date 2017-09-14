@@ -147,7 +147,7 @@
 <ul>
 <li>多一个文本，多一个注释都不行</li>
 </ul>
-<h2 id="-">登录练习可能产生错误</h2>
+<h2 id="-">登录练习错误解析</h2>
 <ol>
 <li>查看login的http请求有没有发送</li>
 <li>查看请求的FormData核对有没有以下2个字段<ul>
@@ -157,62 +157,6 @@
 </li>
 <li>核对字段的值</li>
 </ol>
-<h2 id="-">跨页面传值</h2>
-<ul>
-<li><p>get请求的参数</p>
-<ul>
-<li>在页面跳转的时候，把要传递的参数作为url请求路径的一部分
-location.href=&quot;index.html?id=666&amp;age=18&quot;;</li>
-<li>在目标页面，通过location.search到相关参数
-location.search--&gt;&quot;?id=666&amp;age=18&quot;</li>
-</ul>
-</li>
-<li><p>h5中新增了本地存储技术：localStorage/sessionStorage</p>
-<ul>
-<li><p>sessionStorage是会话级的存储时间  / localStorage永久存储</p>
-</li>
-<li><p>存储数据：localStorage.setItem(&quot;键&quot;,&quot;值&quot;)</p>
-<ul>
-<li>切记：所有的值都应该是一个字符串类型的值，如果不是字符串类型，方法内部会把该值转换为字符串类型存储<ul>
-<li>特殊情况：传递数字也可以  100--&gt;&quot;100&quot;  &quot;100&quot;--&gt;&quot;100&quot;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>cookie</p>
-<ul>
-<li>前提：必须要在同一个域名下面的不同页面</li>
-<li>cookie的2种类型：<ul>
-<li>会话cookie：cookie会在每一次会话之后之后删除</li>
-<li>长期cookie：cookie保存一段时间</li>
-</ul>
-</li>
-<li>原生JS：<ul>
-<li>设置一个会话cookie：document.cookie=&quot;id=888&quot;;</li>
-<li>设置一个长期cookie：document.cookie=&quot;name=ccc;expires=&quot;+new Date(&quot;2017-09-12 08:00:00&quot;);</li>
-<li>获取cookie：document.cookie：获取到当前域名下面的所有cookie值</li>
-</ul>
-</li>
-<li>jquery.cookie.js操作cookie<ul>
-<li>jquery.cookie.js依赖于jquery</li>
-<li>设置一个会话cookie:$.cookie(&quot;键&quot;,&quot;值&quot;)</li>
-<li>设置一个长期cookie：$.cookie(&quot;键&quot;,&quot;值&quot;,{ expires:日期类型或者数字类型 })</li>
-<li>获取cookie：$.cookie(&quot;键&quot;)</li>
-<li>移除一个cookie：$.removeCookie(&quot;键&quot;)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>服务器端：session</p>
-</li>
-</ul>
-<h2 id="-">对象的序列化和反序列化</h2>
-<ul>
-<li>JSON.stringify(对象)：将一个对象序列化为一个json数据</li>
-<li>JSON.parse(&quot;json数据&quot;)：将一个json数据转化为一个对象</li>
-</ul>
 <h2 id="-2-2-amd-amd-">如果引用了2个第三方模块，2个第三方模块都支持AMD规范，那么就可以使用AMD规范中的写法</h2>
 <ul>
 <li>把依赖项放在数组中<ul>
@@ -226,59 +170,63 @@ location.search--&gt;&quot;?id=666&amp;age=18&quot;</li>
 </ul>
 </li>
 </ul>
-<h2 id="-">项目类型</h2>
-<ul>
-<li>企业级项目：企业内部员工，企业客户--&gt;ERP/OA/CRM/CMS/财务网站<ul>
-<li>所有的企业级项目都必须登录才能访问</li>
-</ul>
-</li>
-<li>互联网项目：全部互联网用户</li>
-</ul>
 <h2 id="requirejs-arttemplate-">requirejs中使用arttemplate模板引擎</h2>
 <ul>
 <li>1、把代码放到项目中的指定位置</li>
 <li>2、配置模板引擎的路径</li>
-<li>3、在需要编译模板的文件中导入该模块，可以通过形参获取模板引擎的入口函数
-```js
-require([&quot;template&quot;],function(template){
-  //这里的形参template就是arttemplate模板引擎的入口函数
-  //1、常用的API
-  //1.1、template(script的id,数据)
-  //1.2、template.render(模板内容,数据)
-  //</li>
+<li>3、在需要编译模板的文件中导入该模块，可以通过形参获取模板引擎的入口函数</li>
 </ul>
-<p>})</p>
-<pre><code>
-## 功能的实现思路
-### 渲染讲师列表
-+ 0、拼接DOM
-+ 1、模板渲染
-    - a、把页面结构放到模板中，写arttemplate的语法
-        - 。。。
-        ```html
-        &lt;script id=&quot;tplTeacherList&quot;&gt;
-                    &lt;table&gt;
-                        {{each result}}
-                            //$value是数组中每一个元素
-                            //要获取用户名：$value.tc_name
-                            &lt;tr&gt;
-                                &lt;td&gt;{{$value.tc_name}}&lt;/td&gt;
-                            &lt;/tr&gt;
-                        {{/each}}
-                    &lt;/table&gt;
-                &lt;/script&gt;
-</code></pre><pre><code>- b、
-    - i&gt;通过ajax获取数据
-        - $.ajax({ url:&quot;/api/teacher&quot;,type:&quot;get&quot;,success:function(res){
-            //res：接受了接口的返回值：响应的结果
+<pre><code class="lang-js">    require([&quot;template&quot;],function(template){
+        //这里的形参template就是arttemplate模板引擎的入口函数
+        //1、常用的API
+        //1.1、template(script的id,数据)
+        //1.2、template.render(模板内容,数据)
+        //
 
-            - ii&gt;var html=template(&quot;script的id&quot;,res);
-
-            - c、把html添加到页面中指定位置：$(&quot;.main .content-container&quot;).html(html);
-        } })
-</code></pre><h3 id="-">链式编程</h3>
+    })
+</code></pre>
+<h2 id="-">功能的实现思路</h2>
+<h3 id="-">渲染讲师列表</h3>
 <ul>
-<li>$(&quot;div&quot;).css(&quot;color&quot;,&quot;red&quot;).attr(&quot;tc_id&quot;,666)</li>
+<li>0、拼接DOM</li>
+<li><p>1、模板渲染</p>
+<ul>
+<li>a、把页面结构放到模板中，写arttemplate的语法<ul>
+<li>。。。<pre><code class="lang-html">&lt;script id=&quot;tplTeacherList&quot;&gt;
+          &lt;table&gt;
+              {{each result}}
+                  //$value是数组中每一个元素
+                  //要获取用户名：$value.tc_name
+                  &lt;tr&gt;
+                      &lt;td&gt;{{$value.tc_name}}&lt;/td&gt;
+                  &lt;/tr&gt;
+              {{/each}}
+          &lt;/table&gt;
+      &lt;/script&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>b、</p>
+<ul>
+<li><p>i&gt;通过ajax获取数据</p>
+<ul>
+<li><p>$.ajax({ url:&quot;/api/teacher&quot;,type:&quot;get&quot;,success:function(res){
+  //res：接受了接口的返回值：响应的结果</p>
+<ul>
+<li><p>ii&gt;var html=template(&quot;script的id&quot;,res);</p>
+</li>
+<li><p>c、把html添加到页面中指定位置：$(&quot;.main .content-container&quot;).html(html);
+} })</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h3 id="-">注销/启用讲师</h3>
 <ul>
@@ -394,24 +342,6 @@ require([&quot;template&quot;],function(template){
 </ul>
 </li>
 </ul>
-<h3 id="es5-arguments-callee">es5之前要获取当前函数本身，可以在函数体内部通过arguments.callee</h3>
-<ul>
-<li>es5规定了严格模式，严格模式中禁止使用callee/caller</li>
-<li>在严格模式下面如何获取当前函数？<pre><code class="lang-js">  (function fn3(){
-      //fn3是一个&quot;特殊的名字&quot;，这个名字在外界访问不是一个函数名，在函数体内部访问就指向了当前函数本身
-  })()
-</code></pre>
-</li>
-<li>面试题
-```js
-var f1=function f5(){
-  //在函数体内部f1和f2都指向该函数
-  console.log(f1===f5);   //true</li>
-</ul>
-<p>};
-console.log(typeof f1);     //f1是一个函数,--&gt;&quot;function&quot;
-console.log(typeof f2);     //f2不存在，--&gt;&quot;undefined&quot;
-```</p>
 <h3 id="-">查看讲师实现思路：</h3>
 <ol>
 <li>找到功能的入口，点击查看按钮<ul>
@@ -488,6 +418,95 @@ console.log(typeof f2);     //f2不存在，--&gt;&quot;undefined&quot;
 </ul>
 </li>
 </ul>
+<h2 id="-">补充</h2>
+<h3 id="-">跨页面传值</h3>
+<ul>
+<li><p>get请求的参数</p>
+<ul>
+<li>在页面跳转的时候，把要传递的参数作为url请求路径的一部分
+location.href=&quot;index.html?id=666&amp;age=18&quot;;</li>
+<li>在目标页面，通过location.search到相关参数
+location.search--&gt;&quot;?id=666&amp;age=18&quot;</li>
+</ul>
+</li>
+<li><p>h5中新增了本地存储技术：localStorage/sessionStorage</p>
+<ul>
+<li><p>sessionStorage是会话级的存储时间  / localStorage永久存储</p>
+</li>
+<li><p>存储数据：localStorage.setItem(&quot;键&quot;,&quot;值&quot;)</p>
+<ul>
+<li>切记：所有的值都应该是一个字符串类型的值，如果不是字符串类型，方法内部会把该值转换为字符串类型存储<ul>
+<li>特殊情况：传递数字也可以  100--&gt;&quot;100&quot;  &quot;100&quot;--&gt;&quot;100&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>cookie</p>
+<ul>
+<li>前提：必须要在同一个域名下面的不同页面</li>
+<li>cookie的2种类型：<ul>
+<li>会话cookie：cookie会在每一次会话之后之后删除</li>
+<li>长期cookie：cookie保存一段时间</li>
+</ul>
+</li>
+<li>原生JS：<ul>
+<li>设置一个会话cookie：document.cookie=&quot;id=888&quot;;</li>
+<li>设置一个长期cookie：document.cookie=&quot;name=ccc;expires=&quot;+new Date(&quot;2017-09-12 08:00:00&quot;);</li>
+<li>获取cookie：document.cookie：获取到当前域名下面的所有cookie值</li>
+</ul>
+</li>
+<li>jquery.cookie.js操作cookie<ul>
+<li>jquery.cookie.js依赖于jquery</li>
+<li>设置一个会话cookie:$.cookie(&quot;键&quot;,&quot;值&quot;)</li>
+<li>设置一个长期cookie：$.cookie(&quot;键&quot;,&quot;值&quot;,{ expires:日期类型或者数字类型 })</li>
+<li>获取cookie：$.cookie(&quot;键&quot;)</li>
+<li>移除一个cookie：$.removeCookie(&quot;键&quot;)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>服务器端：session</p>
+</li>
+</ul>
+<h3 id="-">对象的序列化和反序列化</h3>
+<ul>
+<li>JSON.stringify(对象)：将一个对象序列化为一个json数据</li>
+<li>JSON.parse(&quot;json数据&quot;)：将一个json数据转化为一个对象</li>
+</ul>
+<h3 id="-">项目类型</h3>
+<ul>
+<li>企业级项目：企业内部员工，企业客户--&gt;ERP/OA/CRM/CMS/财务网站<ul>
+<li>所有的企业级项目都必须登录才能访问</li>
+</ul>
+</li>
+<li>互联网项目：全部互联网用户</li>
+</ul>
+<h3 id="-">链式编程</h3>
+<ul>
+<li>$(&quot;div&quot;).css(&quot;color&quot;,&quot;red&quot;).attr(&quot;tc_id&quot;,666)</li>
+</ul>
+<h3 id="es5-arguments-callee">es5之前要获取当前函数本身，可以在函数体内部通过arguments.callee</h3>
+<ul>
+<li>es5规定了严格模式，严格模式中禁止使用callee/caller</li>
+<li>在严格模式下面如何获取当前函数？</li>
+</ul>
+<pre><code class="lang-js">    (function fn3(){
+        //fn3是一个&quot;特殊的名字&quot;，这个名字在外界访问不是一个函数名，在函数体内部访问就指向了当前函数本身
+    })()
+</code></pre>
+<ul>
+<li>面试题</li>
+</ul>
+<pre><code class="lang-js">    var f1=function f5(){
+        //在函数体内部f1和f2都指向该函数
+        console.log(f1===f5);   //true
+
+    };
+    console.log(typeof f1);     //f1是一个函数,--&gt;&quot;function&quot;
+    console.log(typeof f2);     //f2不存在，--&gt;&quot;undefined&quot;
+</code></pre>
 <h2 id="-">面试题：</h2>
 <h3 id="call-apply-">call/apply的异同？</h3>
 <h3 id="localstorage-sessionstorage-">localStorage/sessionStorage的区别</h3>

@@ -73,48 +73,12 @@ bxg10/
 ## 博学谷项目中模态框模板必须只能有一个根节点
 + 多一个文本，多一个注释都不行
 
-## 登录练习可能产生错误
+## 登录练习错误解析
 1. 查看login的http请求有没有发送
 2. 查看请求的FormData核对有没有以下2个字段
     + tc_pass
     + tc_name
 3. 核对字段的值
-
-## 跨页面传值
-+ get请求的参数
-    - 在页面跳转的时候，把要传递的参数作为url请求路径的一部分
-    location.href="index.html?id=666&age=18";
-    + 在目标页面，通过location.search到相关参数
-    location.search-->"?id=666&age=18"
-
-+ h5中新增了本地存储技术：localStorage/sessionStorage
-    - sessionStorage是会话级的存储时间  / localStorage永久存储
-
-    - 存储数据：localStorage.setItem("键","值")
-        - 切记：所有的值都应该是一个字符串类型的值，如果不是字符串类型，方法内部会把该值转换为字符串类型存储
-            - 特殊情况：传递数字也可以  100-->"100"  "100"-->"100"
-
-+ cookie
-    - 前提：必须要在同一个域名下面的不同页面
-    - cookie的2种类型：
-        - 会话cookie：cookie会在每一次会话之后之后删除
-        - 长期cookie：cookie保存一段时间
-    - 原生JS：
-        - 设置一个会话cookie：document.cookie="id=888";
-        - 设置一个长期cookie：document.cookie="name=ccc;expires="+new Date("2017-09-12 08:00:00");
-        - 获取cookie：document.cookie：获取到当前域名下面的所有cookie值
-    - jquery.cookie.js操作cookie
-        - jquery.cookie.js依赖于jquery
-        - 设置一个会话cookie:$.cookie("键","值")
-        - 设置一个长期cookie：$.cookie("键","值",{ expires:日期类型或者数字类型 })
-        - 获取cookie：$.cookie("键")
-        - 移除一个cookie：$.removeCookie("键")
-
-+ 服务器端：session
-
-## 对象的序列化和反序列化
-+ JSON.stringify(对象)：将一个对象序列化为一个json数据
-+ JSON.parse("json数据")：将一个json数据转化为一个对象
 
 
 
@@ -128,26 +92,20 @@ bxg10/
         define(["product","shop"],function(){})
         ```
 
-## 项目类型
-+ 企业级项目：企业内部员工，企业客户-->ERP/OA/CRM/CMS/财务网站
-    - 所有的企业级项目都必须登录才能访问
-+ 互联网项目：全部互联网用户
-
-
-
 ## requirejs中使用arttemplate模板引擎
 + 1、把代码放到项目中的指定位置
 + 2、配置模板引擎的路径
 + 3、在需要编译模板的文件中导入该模块，可以通过形参获取模板引擎的入口函数
-```js
-require(["template"],function(template){
-    //这里的形参template就是arttemplate模板引擎的入口函数
-    //1、常用的API
-    //1.1、template(script的id,数据)
-    //1.2、template.render(模板内容,数据)
-    //
 
-})
+```js
+    require(["template"],function(template){
+        //这里的形参template就是arttemplate模板引擎的入口函数
+        //1、常用的API
+        //1.1、template(script的id,数据)
+        //1.2、template.render(模板内容,数据)
+        //
+
+    })
 ```
 
 ## 功能的实现思路
@@ -179,8 +137,7 @@ require(["template"],function(template){
                 - c、把html添加到页面中指定位置：$(".main .content-container").html(html);
             } })
 
-### 链式编程
-+ $("div").css("color","red").attr("tc_id",666)
+
 
 ### 注销/启用讲师
 + 1、找到功能的入口：点击注销/启用按钮
@@ -256,24 +213,7 @@ require(["template"],function(template){
             }
         })
 
-### es5之前要获取当前函数本身，可以在函数体内部通过arguments.callee
-+ es5规定了严格模式，严格模式中禁止使用callee/caller
-+ 在严格模式下面如何获取当前函数？
-```js
-    (function fn3(){
-        //fn3是一个"特殊的名字"，这个名字在外界访问不是一个函数名，在函数体内部访问就指向了当前函数本身
-    })()
-```
-+ 面试题
-```js
-var f1=function f5(){
-    //在函数体内部f1和f2都指向该函数
-    console.log(f1===f5);   //true
 
-};
-console.log(typeof f1);     //f1是一个函数,-->"function"
-console.log(typeof f2);     //f2不存在，-->"undefined"
-```
 
 ### 查看讲师实现思路：
 1. 找到功能的入口，点击查看按钮
@@ -289,6 +229,21 @@ console.log(typeof f2);     //f2不存在，-->"undefined"
     + 把内容以模态框的形式添加到页面中
         - $(html).appendTo("body").modal();
 
+### 分类列表实现思路
++ 1、找到功能的入口：首页的分类列表菜单
+	-->给分类列表菜单绑定事件
+
++ 2、事件触发的时候加载分类列表模块
+	-->准备一个category/list.js模块
+	-->main.js中调用category/list.js模块
++ 3、在分类列表模块中完成功能
+	-->a、准备一个列表的模板文件
+	-->b、通过text插件获取模板内容（没有数据）
+	-->c、根据ajax请求获取数据
+	-->d、把数据放到模板中-->template编译模板
+		var html=template.render(模板内容，数据);
+	-->e、把html放到页面中的指定位置：
+		$(".main .content-container").html(html);
 
 ## 老师可以把cookie再举多一个例子帮助消化吗?
 ### cookie的用法-->jquery.cookie.js
@@ -320,6 +275,72 @@ console.log(typeof f2);     //f2不存在，-->"undefined"
     - 第三方模块，支持了AMD规范，但是它的入口是其他文件提供的，那么该模块也没有返回值，
         - jquery.cookie    $.cookie 入口就是：$，$是jquery贡献出来的，
         - bootstrap.js	    $().modal() 入口就是：$
+
+## 补充
+### 跨页面传值
++ get请求的参数
+    - 在页面跳转的时候，把要传递的参数作为url请求路径的一部分
+    location.href="index.html?id=666&age=18";
+    + 在目标页面，通过location.search到相关参数
+    location.search-->"?id=666&age=18"
+
++ h5中新增了本地存储技术：localStorage/sessionStorage
+    - sessionStorage是会话级的存储时间  / localStorage永久存储
+
+    - 存储数据：localStorage.setItem("键","值")
+        - 切记：所有的值都应该是一个字符串类型的值，如果不是字符串类型，方法内部会把该值转换为字符串类型存储
+            - 特殊情况：传递数字也可以  100-->"100"  "100"-->"100"
+
++ cookie
+    - 前提：必须要在同一个域名下面的不同页面
+    - cookie的2种类型：
+        - 会话cookie：cookie会在每一次会话之后之后删除
+        - 长期cookie：cookie保存一段时间
+    - 原生JS：
+        - 设置一个会话cookie：document.cookie="id=888";
+        - 设置一个长期cookie：document.cookie="name=ccc;expires="+new Date("2017-09-12 08:00:00");
+        - 获取cookie：document.cookie：获取到当前域名下面的所有cookie值
+    - jquery.cookie.js操作cookie
+        - jquery.cookie.js依赖于jquery
+        - 设置一个会话cookie:$.cookie("键","值")
+        - 设置一个长期cookie：$.cookie("键","值",{ expires:日期类型或者数字类型 })
+        - 获取cookie：$.cookie("键")
+        - 移除一个cookie：$.removeCookie("键")
+
++ 服务器端：session
+
+### 对象的序列化和反序列化
++ JSON.stringify(对象)：将一个对象序列化为一个json数据
++ JSON.parse("json数据")：将一个json数据转化为一个对象
+
+### 项目类型
++ 企业级项目：企业内部员工，企业客户-->ERP/OA/CRM/CMS/财务网站
+    - 所有的企业级项目都必须登录才能访问
++ 互联网项目：全部互联网用户
+
+### 链式编程
++ $("div").css("color","red").attr("tc_id",666)
+
+### es5之前要获取当前函数本身，可以在函数体内部通过arguments.callee
++ es5规定了严格模式，严格模式中禁止使用callee/caller
++ 在严格模式下面如何获取当前函数？
+
+```js
+    (function fn3(){
+        //fn3是一个"特殊的名字"，这个名字在外界访问不是一个函数名，在函数体内部访问就指向了当前函数本身
+    })()
+```
++ 面试题
+
+```js
+    var f1=function f5(){
+        //在函数体内部f1和f2都指向该函数
+        console.log(f1===f5);   //true
+
+    };
+    console.log(typeof f1);     //f1是一个函数,-->"function"
+    console.log(typeof f2);     //f2不存在，-->"undefined"
+```
 
 ## 面试题：
 ### call/apply的异同？
