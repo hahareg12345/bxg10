@@ -27,8 +27,8 @@
                     <td>{{v.total}}</td>
                     <td>{{v.cg_is_hide=="1"?"隐藏":"显示"}}</td>
                     <td>{{v.cg_order}}</td>
-                    <td>
-                        <button class="btn btn-primary">编辑</button>
+                    <td cg_id="{{v.cg_id}}">
+                        <button class="btn btn-primary btn-edit">编辑</button>
                     </td>
                 </tr>
             {{/each}}

@@ -43,7 +43,8 @@ require([
     "cookie",
     "bootstrap",
     "datetimepicker",        //日期控件
-    "datetimepickerlang"     //日期控件的语言包
+    "datetimepickerlang",     //日期控件的语言包
+    "common/myModal"        //自己写的牛逼哄哄的一个基于bootstrap的模态框插件
 ],function($,teacherList,categoryList){
     //template就是arttemplate模板引擎的入口函数
 

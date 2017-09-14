@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../../js/lib/jquery-2.1.4.js"></script>
+<script>
+    //结论1：
+    var o1={age:18};
+    var o2={age:18};
+
+    console.log(o2==o1);//false
+
+    //结论2：
+    var div1=document.createElement("div");
+    var div2=document.createElement("div");
+    console.log(div1==div2);//false
+
+    //结论3：
+    console.log($("body")==$("body"));//false
+
+    //结论4：
+    console.log($("body")[0]==$("body")[0]);//true
+
+    //结论5：-->原因同：结论3
+    console.log($("<input/>")==$("<input/>"));//false
+
+    //结论6：
+    var input="<input/>";
+
+    var $input1=$(input);
+    var $input2=$(input);
+
+    console.log($input1[0]==$input2[0]);//false
+</script>
+</html>

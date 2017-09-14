@@ -10,32 +10,48 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">分类名称</label>
                         <div class="col-sm-10">
-                            <input type="text" name="cg_name" class="form-control">
+                            <input type="text" name="cg_name" value="{{old.cg_name}}" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">是否显示</label>
                         <div class="col-sm-10">
-                            <label class="radio-inline">
-                                <input type="radio" name="cg_is_hide" value="0" checked="checked"> 显示
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="cg_is_hide" value="1"> 隐藏
-                            </label>
+                            {{if(old.cg_is_hide==0)}}
+                                <label class="radio-inline">
+                                    <input type="radio" name="cg_is_hide" value="0" checked="checked"> 显示
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="cg_is_hide" value="1"> 隐藏
+                                </label>
+                            {{else}}
+                                <label class="radio-inline">
+                                    <input type="radio" name="cg_is_hide" value="0"> 显示
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="cg_is_hide" value="1" checked="checked"> 隐藏
+                                </label>
+                            {{/if}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">排序</label>
                         <div class="col-sm-10">
-                            <input type="text" name="cg_order" class="form-control">
+                            <input type="text" name="cg_order" value="{{old.cg_order}}" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">上级分类</label>
                         <div class="col-sm-10">
                             <select name="cg_pid" class="form-control">
+                                <!--//选中哪一个上级分类，应该根据old中的cg_pid的值来决定-->
+                                <!--//&ndash;&gt;在遍历result的时候，$value.cg_id，和old.cg_pid来匹配，匹配成功就选中，反之就不选中-->
+
                                 {{each result}}
+                                    {{if($value.cg_id==old.cg_pid)}}
+                                <option value="{{$value.cg_id}}" selected="selected">{{$value.cg_name}}</option>
+                                    {{else}}
                                 <option value="{{$value.cg_id}}">{{$value.cg_name}}</option>
+                                    {{/if}}
                                 {{/each}}
                             </select>
                         </div>

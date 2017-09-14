@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="添加">
+
+</body>
+<script src="../../js/lib/jquery-2.1.4.js"></script>
+<script>
+    //代码1：
+//    var $1=$("input").on("click", function () {
+//        alert("第一次");
+//    });
+//
+//    var $2=$("input").on("click", function () {
+//        alert("第二次");
+//    });
+//    console.log($1==$2);//false-->$(document.body)!=$(document.body)
+//    console.log($1[0]==$2[0]);//true
+//    //-->每一次调用$(),都会产生一块新内存；虽然jquery对象不同，但是对象中的元素相同，所以事件就绑定在了相同的元素中
+
+
+//    var div1=document.createElement("div");
+//    var div2=document.createElement("div");
+//    console.log(div1==div2);//false
+
+    //代码2：
+//    var $1=$("<input type='button'/>").appendTo("body").on("click", function () {
+//        alert("111");
+//    });
+//    var $2=$("<input type='button'/>").appendTo("body").on("click", function () {
+//        alert("222");
+//    });
+//    console.log($1==$2);//false
+//    console.log($1[0]==$2[0]);//false
+//    //jquery对象不同，通过jquery对象包裹的DOM元素也不同，所以事件绑定在2个不同的元素中
+
+
+
+    //代码2的变种
+//    var input="<input type='button'/>";
+//    $(input).appendTo("body").on("click", function () {
+//        alert("111");
+//    });
+//    $(input).appendTo("body").on("click", function () {
+//        alert("222");
+//    });
+
+
+
+
+    //代码3：错误的事件绑定写法
+//    var input = "<input type='button'/>";
+//    //把一个字符串转换为DOM元素（dom1），并把dom元素放到jquery对象中，事件绑定在该DOM元素中
+//    $(input).on("click", function () {
+//        alert("111");
+//    });
+//    //把一个字符串转换为DOM元素(dom2)，并把dom元素放到jquery对象中-->dom1!=dom2
+//    $(input).appendTo("body")       //body中的dom元素：dom2
+//    //-->结果：页面中点击按钮，不会触发事件
+//    //----->页面中的按钮相当于：dom2，绑定事件的按钮是dom1  dom1!=dom2
+
+
+    //代码4：正确的事件绑定写法
+    var input = "<input type='button'/>";
+    var $input = $(input);              //产生dom1，把dom1存放在jquery对象中
+    $input.appendTo("body");            //把dom1放到页面中
+    $input.on("click", function () {    //给dom1绑定事件
+        alert("111");
+    });
+    $input.on("click", function () {    //给dom1绑定事件
+        alert("222");
+    });
+</script>
+</html>

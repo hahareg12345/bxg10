@@ -28,6 +28,32 @@ define([
 
                 //2、把内容放到页面中
                 var $html = $(html)
+                    //实现提交表单
+                    .on("submit","form",function(e){
+                        //this:form标签
+
+                        e.preventDefault();
+
+                        var formData=$(this).serialize();//表单的name
+                        $.ajax({
+                            url:"/api/category/add",
+                            type:"post",
+                            data:formData,
+                            success:function(res){
+                                //this:ajax对象
+
+                                if(res.code!=200) throw new Error(res.msg);
+
+                                //隐藏模态框
+                                $html.modal("hide");
+
+                                //刷新分类列表
+                                $(".menu .list-group a[item=category]").trigger("click");
+
+                            }
+                        })
+
+                    })
                     .appendTo("body").modal()
                     .on("hidden.bs.modal", function () {
 
