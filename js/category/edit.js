@@ -46,7 +46,25 @@ define([
 
                         var html=template.render(categoryEditTpl,resTop);
                         //内容放到页面中，以模态框的形式呈现
-                        var $html=$(html).myModal();
+                        var $html=$(html).on("submit","form",function(e){
+                            e.preventDefault();
+
+                            var formData=$(this).serialize();
+
+                            $.ajax({
+                                url:"/api/category/modify",
+                                type:"post",
+                                data:formData,
+                                success:function(res){
+                                    //隐藏模态框
+                                    $html.modal("hide");
+                                    //刷新分类列表
+                                    $(".menu .list-group a[item=category]").trigger("click");
+                                }
+                            })
+
+
+                        }).myModal();
                     }
                 })
 
