@@ -8,8 +8,9 @@ define([
     "text!tpls/teacherList.html",   //讲师列表模板文件
     "template",                    //arttemplate模板引擎
     "teacher/show",    //查看讲师模块              //"./show"是正确答案      //"show"是错误答案
-    "teacher/add"      //添加讲师模块
-], function ($, teacherListTpl, template, teacherShow, teacherAdd) {
+    "teacher/add",      //添加讲师模块
+    "teacher/edit"      //编辑讲师模块
+], function ($, teacherListTpl, template, teacherShow, teacherAdd,teacherEdit) {
 
 
     //把模块的主要业务逻辑写在返回值中
@@ -85,6 +86,11 @@ define([
                             }
                         })
 
+                    })
+                    //编辑讲师
+                    .on("click",".btn-edit",function(){
+
+                        teacherEdit();
                     })
 
 
