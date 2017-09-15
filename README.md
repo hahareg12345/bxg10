@@ -117,6 +117,8 @@ bxg10/
     - 事件绑定在div.panel中，通过委托让按钮触发：
 + 2、事件触发的时候
     - a、修改服务器中该用户的状态值
+
+    ```js
         $.ajax({ url:"/api/teacher/handle" type:"post",data: {
             tc_id:按钮的父元素找到tc_id,
             tc_status:也在页面渲染的时候把tc_status保存起来然后再获取,
@@ -124,13 +126,16 @@ bxg10/
                 //res.result.tc_status：表示用户最新的状态值
                 //把最新的状态值渲染到页面中
         } })
+    ```
+
     - b、修改表格中显示的文本
 
 ### 添加讲师
 1. 找到功能的入口：点击添加讲师按钮
     - 给添加讲师按钮绑定事件
         - 给添加讲师按钮设置一个类名
-        - 事件绑定在div.panel中，通过委托让按钮触发：$("div.panel").on("click",".btn-add",function(){})
+        - 事件绑定在div.panel中，通过委托让按钮触发：`$("div.panel").on("click",".btn-add",function(){})`
+
 2. 事件触发的时候，弹出模态框
     + 先准备一个模态框的模板
     + 使用text插件获取模板内容
@@ -140,9 +145,10 @@ bxg10/
                 - 给表单绑定submit事件，通过事件回调函数的形参e：e.preventDefault();
             - b、获取数据
                 - 找到文档中添加讲师对应的接口，看接口请求的参数，找到每一个name值，把该name值一一对应的写在每一个表单元素上
-                - var formData=$("form").serialize();
+                - `var formData=$("form").serialize();`
             - c、发送ajax请求
-                - $.ajax({url:"/api/teacher/add",type:"post",data:formData,success:function(res){
+                ```js
+                $.ajax({url:"/api/teacher/add",type:"post",data:formData,success:function(res){
                     //res:{code:200,msg:"ok",time:12351324123}
 
                     //如果成功了？
@@ -152,10 +158,11 @@ bxg10/
                         //a-->调用list.js实现刷新功能
                         //b-->点击讲师管理按钮
                 }})
+                ```
 
 ### 编辑讲师
 + 找到功能的入口：编辑讲师按钮：给按钮绑定单击事件
-    - 给每一个编辑按钮指定一个类名：btn-edit
+    - 给每一个编辑按钮指定一个类名：`btn-edit`
     - 事件绑定在div.panel中，通过事件委托让编辑按钮触发
 + 事件触发的时候，弹出模态框
     - 准备一个模态框的模板
@@ -164,19 +171,19 @@ bxg10/
         - url:/api/teacher/edit
         - type:get
         - data:{tc_id: 获取按钮的父元素中tc_id属性值 }
-        - success:function(res){
-
-        }
+        - success:function(res){   }
     - 把数据放到模板中：arttemplate编译模板传入数据，获取真实内容
-        - var html=template.render(模板内容,数据)
+        - `var html=template.render(模板内容,数据)`
     - 把真实内容放到页面中，并且以模态框的形式呈现出来
 
 + 点击模态框中的提交按钮，把数据提交到服务器中，提供成功刷新讲师列表
     - 异步的提交-->把表单设置成异步的：给表单绑定submit事件，通过事件对象的e.preventDefault();
     - 获取表单数据：
-        - var formData=$(this).serialize();     //每一个表单具有指定的name属性
+        - `var formData=$(this).serialize();     //每一个表单具有指定的name属性`
     - 把数据通过ajax发送到服务器中
-        - $.ajax({
+        -
+        ```js
+        $.ajax({
             url:"/api/teacher/update",
             type:"post",
             data:formData,
@@ -184,13 +191,14 @@ bxg10/
                 //成功之后就刷新讲师列表
             }
         })
+        ```
 
 
 
 ### 查看讲师实现思路：
 1. 找到功能的入口，点击查看按钮
     + 给每一个查看按钮绑定单击事件
-        - 事件绑定在div.panel中，通过委托让每一个查看按钮触发：$("div.panel").on("click",".btn-show",function(){})
+        - 事件绑定在div.panel中，通过委托让每一个查看按钮触发：`$("div.panel").on("click",".btn-show",function(){})`
 2. 事件触发的时候，弹出模态框？
     + 先准备一个模态框的模板页面
     + 通过text插件获取模板页面的内容
@@ -203,41 +211,41 @@ bxg10/
 
 ### 分类列表实现思路
 + 1、找到功能的入口：首页的分类列表菜单
-	-->给分类列表菜单绑定事件
+	- 给分类列表菜单绑定事件
 
 + 2、事件触发的时候加载分类列表模块
-	-->准备一个category/list.js模块
-	-->main.js中调用category/list.js模块
+	- 准备一个category/list.js模块
+	- main.js中调用category/list.js模块
 + 3、在分类列表模块中完成功能
-	-->a、准备一个列表的模板文件
-	-->b、通过text插件获取模板内容（没有数据）
-	-->c、根据ajax请求获取数据
-	-->d、把数据放到模板中-->template编译模板
+	- a、准备一个列表的模板文件
+	- b、通过text插件获取模板内容（没有数据）
+	- c、根据ajax请求获取数据
+	- d、把数据放到模板中-->template编译模板
 		var html=template.render(模板内容，数据);
-	-->e、把html放到页面中的指定位置：
+	- e、把html放到页面中的指定位置：
 		$(".main .content-container").html(html);
 
 ### 添加分类
-1、找到功能的入口：添加分类按钮
-	-->给按钮绑定事件
-		-->a、给按钮指定一个类名：btn-add
-		-->b、把事件绑定在div.panel中，通过事件委托让btn-add触发
++ 1、找到功能的入口：添加分类按钮
+	- 给按钮绑定事件
+		- 给按钮指定一个类名：btn-add
+		- 把事件绑定在div.panel中，通过事件委托让btn-add触发
 
-2、事件触发的时候，弹出一个模态框
-	-->a、准备一个模态框模板文件
-	-->b、通过text插件获取模板内容
-	-->c、通过ajax获取上级分类数据
-	-->d、把上级分类数据通过arttemplate编译到模板中
-	-->e、把编译后的结果放到页面中的指定位置，并且以模态框的形式呈现出来
++ 2、事件触发的时候，弹出一个模态框
+	- 准备一个模态框模板文件
+	- 通过text插件获取模板内容
+	- 通过ajax获取上级分类数据
+	- 把上级分类数据通过arttemplate编译到模板中
+	- 把编译后的结果放到页面中的指定位置，并且以模态框的形式呈现出来
 
-3、点击提交按钮，提交表单
-	-->a、把同步的表单变成异步的表单
-		-->i>给表单绑定submit事件，通过事件对象：e.preventDefault();
-	-->b、获取表单数据
-		-->根据接口文档，看看文档需要哪些参数，找到对应的name值，把这些name值一一对应的写在表单中
-		-->var formData=$(this).serialize();
-	-->c、通过ajax请求把数据提交到服务器中
-	-->d、数据提交成功之后，需要隐藏模态框+刷新分类列表
++ 3、点击提交按钮，提交表单
+	- 把同步的表单变成异步的表单
+		- 给表单绑定submit事件，通过事件对象：e.preventDefault();
+	- 获取表单数据
+		- 根据接口文档，看看文档需要哪些参数，找到对应的name值，把这些name值一一对应的写在表单中
+		`var formData=$(this).serialize();`
+	- 通过ajax请求把数据提交到服务器中
+	- 数据提交成功之后，需要隐藏模态框+刷新分类列表
 
 ### 课程列表
 + 找到功能的入口：点击课程管理按钮
@@ -248,6 +256,30 @@ bxg10/
 	- 通过ajax获取数据
 	- 把数据通过arttemplate编译到模板中
 	- 把真实内容放到页面中的指定位置
+
+
+### 添加课程
++ 找到功能的入口：添加课程按钮
+	- 给按钮绑定单击事件
++ 事件触发之后，弹出模态框
+	- 准备一个模态框的模板
+	- 通过text插件获取模板内容
+	- 把模态框放到页面中，并且以模态框呈现出来
+		- $.fn.myModal
+
++ 提交表单
+	- 把表单变成异步的
+		- 给表单绑定submit事件，在事件中：e.preventDefault();
+	- 获取表单数据
+		- $(this).serialize();	//每一个表单的数据都应该具有name属性
+	- 通过ajax把数据提交到服务器中
+		- $.ajax
+	- 数据提交成功之后
+		- a、隐藏模态框
+			- $("div.modal").modal("hide");
+		- b、刷新课程列表
+			- 找到课程管理按钮，trigger触发单击事件
+
 
 ## bootstrap布局
 + 表格布局中
@@ -284,6 +316,7 @@ bxg10/
         </tbody>
     </table>
 ```
+
 
 
 ## 老师可以把cookie再举多一个例子帮助消化吗?
@@ -417,10 +450,14 @@ bxg10/
 + location.pathname		获取路径名称
 
 ### ajax的优缺点
+#### 优点
 + 异步刷新-->实现页面的局部刷新-->只刷新页面的一部分内容
-                            -->减少了资源的重复加载
-                                -->1、页面响应速度有一定的提升(提升了用户体验)
-                                -->2、降低了服务器的压力(最重要)
+
+        - 减少了资源的重复加载
+            - 1、页面响应速度有一定的提升(提升了用户体验)
+            - 2、降低了服务器的压力(最重要)
+
+#### 缺点
 + 缺点：
     - 不能跨域          -->现在有了一些手段支持跨域：jsonp/反向代理/window.name
     - 对SEO不友好       SEO：搜索引擎优化

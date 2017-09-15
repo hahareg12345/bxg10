@@ -66,6 +66,11 @@
         <div id='readme' style='width:70%;margin-left:20%;'>
           	<article class='markdown-body'>
             	<h1 id="-">博学谷项目介绍文档</h1>
+<h2 id="-git-">博学谷项目git仓库地址：</h2>
+<ul>
+<li><a href="https://github.com/hahareg12345/bxg10.git">https://github.com/hahareg12345/bxg10.git</a></li>
+<li>git@github.com:hahareg12345/bxg10.git</li>
+</ul>
 <h2 id="-http-doc-botue-com-">接口文档：<a href="http://doc.botue.com/">http://doc.botue.com/</a></h2>
 <h2 id="-">项目结构：</h2>
 <pre><code>bxg10/
@@ -87,7 +92,8 @@
         bootstrap/
     index.html  项目的主页(用requirejs管理的
     login.html  登录页(并不使用requirejs)
-</code></pre><h2 id="requirejs-shim">requireJS中什么时候使用shim</h2>
+</code></pre><h2 id="requirejs-">requireJS补充</h2>
+<h3 id="-shim">什么时候使用shim</h3>
 <ul>
 <li>shim只用于第三方模块</li>
 <li>shim一般适用于：a、引入了2个第三方模块，b、之间存在依赖，c、其中一个不支持AMD规范<ul>
@@ -95,45 +101,34 @@
 </ul>
 </li>
 </ul>
-<h2 id="bootstrap-">bootstrap布局</h2>
+<h3 id="-2-2-amd-amd-">如果引用了2个第三方模块，2个第三方模块都支持AMD规范，那么就可以使用AMD规范中的写法</h3>
 <ul>
-<li><p>表格布局中</p>
-<ul>
-<li><code>&lt;td rowspan=&quot;5&quot;&gt;111&lt;/td&gt;</code>  表示该列跨了5行</li>
-<li><code>&lt;td colspan=&quot;3&quot;&gt;555&lt;/td&gt;</code>  表示该列跨了5列</li>
-</ul>
-</li>
-<li><p>在bootstrap中给一个标签设置一个类名为text-center就可以自动实现：<code>文字</code>水平居中</p>
-</li>
-<li>按钮<ul>
-<li>给一个按钮设置一个btn-success  --&gt;按钮呈现绿色的背景</li>
-<li>。。。。。。。。。btn-block    --&gt;按钮的宽度=容器的宽度</li>
-</ul>
-</li>
-<li>面板<pre><code class="lang-html">&lt;div class=&quot;panel panel-default&quot;&gt;
-  &lt;div class=&quot;panel-heading&quot;&gt;面板标题&lt;/div&gt;
-  &lt;div class=&quot;panel-body&quot;&gt;面板内容&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-</li>
-<li>表格<pre><code class="lang-html">&lt;table class=&quot;table table-bordered table-hover&quot;&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;td&gt;aaa&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;bbb&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;ccc&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+<li>把依赖项放在数组中<ul>
+<li>举例<ul>
+<li>cart.js依赖了product.js+shop.js</li>
+<li>在cart.js文件中，通过以下代码实现模块依赖<pre><code class="lang-js">define([&quot;product&quot;,&quot;shop&quot;],function(){})
 </code></pre>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="requirejs-arttemplate-">requirejs中使用arttemplate模板引擎</h3>
+<ul>
+<li>1、把代码放到项目中的指定位置</li>
+<li>2、配置模板引擎的路径</li>
+<li>3、在需要编译模板的文件中导入该模块，可以通过形参获取模板引擎的入口函数</li>
+</ul>
+<pre><code class="lang-js">    require([&quot;template&quot;],function(template){
+        //这里的形参template就是arttemplate模板引擎的入口函数
+        //1、常用的API
+        //1.1、template(script的id,数据)
+        //1.2、template.render(模板内容,数据)
+        //
+
+    })
+</code></pre>
 <h2 id="jquery-">jquery事件绑定</h2>
 <ul>
 <li>每一次提交表单都会触发表单的submit事件</li>
@@ -157,34 +152,6 @@
 </li>
 <li>核对字段的值</li>
 </ol>
-<h2 id="-2-2-amd-amd-">如果引用了2个第三方模块，2个第三方模块都支持AMD规范，那么就可以使用AMD规范中的写法</h2>
-<ul>
-<li>把依赖项放在数组中<ul>
-<li>举例<ul>
-<li>cart.js依赖了product.js+shop.js</li>
-<li>在cart.js文件中，通过以下代码实现模块依赖<pre><code class="lang-js">define([&quot;product&quot;,&quot;shop&quot;],function(){})
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="requirejs-arttemplate-">requirejs中使用arttemplate模板引擎</h2>
-<ul>
-<li>1、把代码放到项目中的指定位置</li>
-<li>2、配置模板引擎的路径</li>
-<li>3、在需要编译模板的文件中导入该模块，可以通过形参获取模板引擎的入口函数</li>
-</ul>
-<pre><code class="lang-js">    require([&quot;template&quot;],function(template){
-        //这里的形参template就是arttemplate模板引擎的入口函数
-        //1、常用的API
-        //1.1、template(script的id,数据)
-        //1.2、template.render(模板内容,数据)
-        //
-
-    })
-</code></pre>
 <h2 id="-">功能的实现思路</h2>
 <h3 id="-">渲染讲师列表</h3>
 <ul>
@@ -235,23 +202,30 @@
 <li>事件绑定在div.panel中，通过委托让按钮触发：</li>
 </ul>
 </li>
-<li>2、事件触发的时候<ul>
-<li>a、修改服务器中该用户的状态值
-  $.ajax({ url:&quot;/api/teacher/handle&quot; type:&quot;post&quot;,data: {<pre><code>  tc_id:按钮的父元素找到tc_id,
-  tc_status:也在页面渲染的时候把tc_status保存起来然后再获取,
-</code></pre>  },success:function(res){<pre><code>      //res.result.tc_status：表示用户最新的状态值
-      //把最新的状态值渲染到页面中
-</code></pre>  } })</li>
-<li>b、修改表格中显示的文本</li>
+<li><p>2、事件触发的时候</p>
+<ul>
+<li><p>a、修改服务器中该用户的状态值</p>
+<pre><code class="lang-js">  $.ajax({ url:&quot;/api/teacher/handle&quot; type:&quot;post&quot;,data: {
+      tc_id:按钮的父元素找到tc_id,
+      tc_status:也在页面渲染的时候把tc_status保存起来然后再获取,
+  },success:function(res){
+          //res.result.tc_status：表示用户最新的状态值
+          //把最新的状态值渲染到页面中
+  } })
+</code></pre>
+</li>
+<li><p>b、修改表格中显示的文本</p>
+</li>
 </ul>
 </li>
 </ul>
 <h3 id="-">添加讲师</h3>
 <ol>
-<li>找到功能的入口：点击添加讲师按钮<ul>
+<li><p>找到功能的入口：点击添加讲师按钮</p>
+<ul>
 <li>给添加讲师按钮绑定事件<ul>
 <li>给添加讲师按钮设置一个类名</li>
-<li>事件绑定在div.panel中，通过委托让按钮触发：$(&quot;div.panel&quot;).on(&quot;click&quot;,&quot;.btn-add&quot;,function(){})</li>
+<li>事件绑定在div.panel中，通过委托让按钮触发：<code>$(&quot;div.panel&quot;).on(&quot;click&quot;,&quot;.btn-add&quot;,function(){})</code></li>
 </ul>
 </li>
 </ul>
@@ -270,22 +244,21 @@
 </li>
 <li>b、获取数据<ul>
 <li>找到文档中添加讲师对应的接口，看接口请求的参数，找到每一个name值，把该name值一一对应的写在每一个表单元素上</li>
-<li>var formData=$(&quot;form&quot;).serialize();</li>
+<li><code>var formData=$(&quot;form&quot;).serialize();</code></li>
 </ul>
 </li>
 <li><p>c、发送ajax请求</p>
-<ul>
-<li><p>$.ajax({url:&quot;/api/teacher/add&quot;,type:&quot;post&quot;,data:formData,success:function(res){
-  //res:{code:200,msg:&quot;ok&quot;,time:12351324123}</p>
-<p>  //如果成功了？
-  //+先关闭模态框</p>
-<pre><code>  //$(模态框容器).modal(&quot;hide&quot;);
-</code></pre><p>  //+然后刷新讲师列表页面</p>
-<pre><code>  //a--&gt;调用list.js实现刷新功能
-  //b--&gt;点击讲师管理按钮
-</code></pre><p>}})</p>
-</li>
-</ul>
+<pre><code class="lang-js">  $.ajax({url:&quot;/api/teacher/add&quot;,type:&quot;post&quot;,data:formData,success:function(res){
+      //res:{code:200,msg:&quot;ok&quot;,time:12351324123}
+
+      //如果成功了？
+      //+先关闭模态框
+          //$(模态框容器).modal(&quot;hide&quot;);
+      //+然后刷新讲师列表页面
+          //a--&gt;调用list.js实现刷新功能
+          //b--&gt;点击讲师管理按钮
+  }})
+</code></pre>
 </li>
 </ul>
 </li>
@@ -297,7 +270,7 @@
 <h3 id="-">编辑讲师</h3>
 <ul>
 <li>找到功能的入口：编辑讲师按钮：给按钮绑定单击事件<ul>
-<li>给每一个编辑按钮指定一个类名：btn-edit</li>
+<li>给每一个编辑按钮指定一个类名：<code>btn-edit</code></li>
 <li>事件绑定在div.panel中，通过事件委托让编辑按钮触发</li>
 </ul>
 </li>
@@ -305,18 +278,15 @@
 <ul>
 <li>准备一个模态框的模板</li>
 <li>通过text插件获取模板内容</li>
-<li><p>通过ajax获取讲师原来的数据</p>
-<ul>
+<li>通过ajax获取讲师原来的数据<ul>
 <li>url:/api/teacher/edit</li>
 <li>type:get</li>
 <li>data:{tc_id: 获取按钮的父元素中tc_id属性值 }</li>
-<li><p>success:function(res){</p>
-<p>}</p>
-</li>
+<li>success:function(res){   }</li>
 </ul>
 </li>
 <li>把数据放到模板中：arttemplate编译模板传入数据，获取真实内容<ul>
-<li>var html=template.render(模板内容,数据)</li>
+<li><code>var html=template.render(模板内容,数据)</code></li>
 </ul>
 </li>
 <li>把真实内容放到页面中，并且以模态框的形式呈现出来</li>
@@ -326,18 +296,19 @@
 <ul>
 <li>异步的提交--&gt;把表单设置成异步的：给表单绑定submit事件，通过事件对象的e.preventDefault();</li>
 <li>获取表单数据：<ul>
-<li>var formData=$(this).serialize();     //每一个表单具有指定的name属性</li>
+<li><code>var formData=$(this).serialize();     //每一个表单具有指定的name属性</code></li>
 </ul>
 </li>
-<li>把数据通过ajax发送到服务器中<ul>
-<li>$.ajax({
-  url:&quot;/api/teacher/update&quot;,
-  type:&quot;post&quot;,
-  data:formData,
-  success:function(res){<pre><code>  //成功之后就刷新讲师列表
-</code></pre>  }
-})</li>
-</ul>
+<li>把数据通过ajax发送到服务器中
+  -<pre><code class="lang-js">  $.ajax({
+      url:&quot;/api/teacher/update&quot;,
+      type:&quot;post&quot;,
+      data:formData,
+      success:function(res){
+          //成功之后就刷新讲师列表
+      }
+  })
+</code></pre>
 </li>
 </ul>
 </li>
@@ -346,7 +317,7 @@
 <ol>
 <li>找到功能的入口，点击查看按钮<ul>
 <li>给每一个查看按钮绑定单击事件<ul>
-<li>事件绑定在div.panel中，通过委托让每一个查看按钮触发：$(&quot;div.panel&quot;).on(&quot;click&quot;,&quot;.btn-show&quot;,function(){})</li>
+<li>事件绑定在div.panel中，通过委托让每一个查看按钮触发：<code>$(&quot;div.panel&quot;).on(&quot;click&quot;,&quot;.btn-show&quot;,function(){})</code></li>
 </ul>
 </li>
 </ul>
@@ -369,21 +340,118 @@
 </ol>
 <h3 id="-">分类列表实现思路</h3>
 <ul>
-<li><p>1、找到功能的入口：首页的分类列表菜单
-  --&gt;给分类列表菜单绑定事件</p>
-</li>
-<li><p>2、事件触发的时候加载分类列表模块
-  --&gt;准备一个category/list.js模块
-  --&gt;main.js中调用category/list.js模块</p>
-</li>
-<li>3、在分类列表模块中完成功能
-  --&gt;a、准备一个列表的模板文件
-  --&gt;b、通过text插件获取模板内容（没有数据）
-  --&gt;c、根据ajax请求获取数据
-  --&gt;d、把数据放到模板中--&gt;template编译模板<pre><code>  var html=template.render(模板内容，数据);
-</code></pre>  --&gt;e、把html放到页面中的指定位置：<pre><code>  $(&quot;.main .content-container&quot;).html(html);
-</code></pre></li>
+<li><p>1、找到功能的入口：首页的分类列表菜单</p>
+<ul>
+<li>给分类列表菜单绑定事件</li>
 </ul>
+</li>
+<li><p>2、事件触发的时候加载分类列表模块</p>
+<ul>
+<li>准备一个category/list.js模块</li>
+<li>main.js中调用category/list.js模块</li>
+</ul>
+</li>
+<li>3、在分类列表模块中完成功能<ul>
+<li>a、准备一个列表的模板文件</li>
+<li>b、通过text插件获取模板内容（没有数据）</li>
+<li>c、根据ajax请求获取数据</li>
+<li>d、把数据放到模板中--&gt;template编译模板
+  var html=template.render(模板内容，数据);</li>
+<li>e、把html放到页面中的指定位置：
+  $(&quot;.main .content-container&quot;).html(html);</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">添加分类</h3>
+<ul>
+<li><p>1、找到功能的入口：添加分类按钮</p>
+<ul>
+<li>给按钮绑定事件<ul>
+<li>给按钮指定一个类名：btn-add</li>
+<li>把事件绑定在div.panel中，通过事件委托让btn-add触发</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2、事件触发的时候，弹出一个模态框</p>
+<ul>
+<li>准备一个模态框模板文件</li>
+<li>通过text插件获取模板内容</li>
+<li>通过ajax获取上级分类数据</li>
+<li>把上级分类数据通过arttemplate编译到模板中</li>
+<li>把编译后的结果放到页面中的指定位置，并且以模态框的形式呈现出来</li>
+</ul>
+</li>
+<li><p>3、点击提交按钮，提交表单</p>
+<ul>
+<li>把同步的表单变成异步的表单<ul>
+<li>给表单绑定submit事件，通过事件对象：e.preventDefault();</li>
+</ul>
+</li>
+<li>获取表单数据<ul>
+<li>根据接口文档，看看文档需要哪些参数，找到对应的name值，把这些name值一一对应的写在表单中
+<code>var formData=$(this).serialize();</code></li>
+</ul>
+</li>
+<li>通过ajax请求把数据提交到服务器中</li>
+<li>数据提交成功之后，需要隐藏模态框+刷新分类列表</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">课程列表</h3>
+<ul>
+<li>找到功能的入口：点击课程管理按钮<ul>
+<li>给按钮绑定单击事件</li>
+</ul>
+</li>
+<li>事件触发的时候，渲染出课程列表<ul>
+<li>准备一个模板文件</li>
+<li>通过text插件获取模板内容</li>
+<li>通过ajax获取数据</li>
+<li>把数据通过arttemplate编译到模板中</li>
+<li>把真实内容放到页面中的指定位置</li>
+</ul>
+</li>
+</ul>
+<h2 id="bootstrap-">bootstrap布局</h2>
+<ul>
+<li><p>表格布局中</p>
+<ul>
+<li><code>&lt;td rowspan=&quot;5&quot;&gt;111&lt;/td&gt;</code>  表示该列跨了5行</li>
+<li><code>&lt;td colspan=&quot;3&quot;&gt;555&lt;/td&gt;</code>  表示该列跨了5列</li>
+</ul>
+</li>
+<li><p>在bootstrap中给一个标签设置一个类名为text-center就可以自动实现：<code>文字</code>水平居中</p>
+</li>
+<li>按钮<ul>
+<li>给一个按钮设置一个btn-success  --&gt;按钮呈现绿色的背景</li>
+<li>。。。。。。。。。btn-block    --&gt;按钮的宽度=容器的宽度</li>
+</ul>
+</li>
+<li>面板<pre><code class="lang-html">&lt;div class=&quot;panel panel-default&quot;&gt;
+  &lt;div class=&quot;panel-heading&quot;&gt;面板标题&lt;/div&gt;
+  &lt;div class=&quot;panel-body&quot;&gt;面板内容&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li>表格</li>
+</ul>
+<pre><code class="lang-html">    &lt;table class=&quot;table table-bordered table-hover&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;td&gt;aaa&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;bbb&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;ccc&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+</code></pre>
 <h2 id="-cookie-">老师可以把cookie再举多一个例子帮助消化吗?</h2>
 <h3 id="cookie-jquery-cookie-js">cookie的用法--&gt;jquery.cookie.js</h3>
 <ul>
@@ -462,19 +530,23 @@ location.search--&gt;&quot;?id=666&amp;age=18&quot;</li>
 </li>
 <li><p>cookie</p>
 <ul>
-<li>前提：必须要在同一个域名下面的不同页面</li>
-<li>cookie的2种类型：<ul>
+<li><p>前提：必须要在同一个域名下面的不同页面</p>
+</li>
+<li><p>cookie的2种类型：</p>
+<ul>
 <li>会话cookie：cookie会在每一次会话之后之后删除</li>
 <li>长期cookie：cookie保存一段时间</li>
 </ul>
 </li>
-<li>原生JS：<ul>
+<li><p>原生JS：</p>
+<ul>
 <li>设置一个会话cookie：document.cookie=&quot;id=888&quot;;</li>
 <li>设置一个长期cookie：document.cookie=&quot;name=ccc;expires=&quot;+new Date(&quot;2017-09-12 08:00:00&quot;);</li>
 <li>获取cookie：document.cookie：获取到当前域名下面的所有cookie值</li>
 </ul>
 </li>
-<li>jquery.cookie.js操作cookie<ul>
+<li><p>jquery.cookie.js操作cookie</p>
+<ul>
 <li>jquery.cookie.js依赖于jquery</li>
 <li>设置一个会话cookie:$.cookie(&quot;键&quot;,&quot;值&quot;)</li>
 <li>设置一个长期cookie：$.cookie(&quot;键&quot;,&quot;值&quot;,{ expires:日期类型或者数字类型 })</li>
@@ -492,21 +564,13 @@ location.search--&gt;&quot;?id=666&amp;age=18&quot;</li>
 <li>JSON.stringify(对象)：将一个对象序列化为一个json数据</li>
 <li>JSON.parse(&quot;json数据&quot;)：将一个json数据转化为一个对象</li>
 </ul>
-<h3 id="-">项目类型</h3>
-<ul>
-<li>企业级项目：企业内部员工，企业客户--&gt;ERP/OA/CRM/CMS/财务网站<ul>
-<li>所有的企业级项目都必须登录才能访问</li>
-</ul>
-</li>
-<li>互联网项目：全部互联网用户</li>
-</ul>
 <h3 id="-">链式编程</h3>
 <ul>
 <li>$(&quot;div&quot;).css(&quot;color&quot;,&quot;red&quot;).attr(&quot;tc_id&quot;,666)</li>
 </ul>
-<h3 id="es5-arguments-callee">es5之前要获取当前函数本身，可以在函数体内部通过arguments.callee</h3>
+<h3 id="es5-arguments-callee">ES5之前要获取当前函数本身，可以在函数体内部通过arguments.callee</h3>
 <ul>
-<li>es5规定了严格模式，严格模式中禁止使用callee/caller</li>
+<li>ES5制定了严格模式，严格模式中禁止使用callee/caller</li>
 <li>在严格模式下面如何获取当前函数？</li>
 </ul>
 <pre><code class="lang-js">    (function fn3(){
@@ -524,6 +588,14 @@ location.search--&gt;&quot;?id=666&amp;age=18&quot;</li>
     console.log(typeof f1);     //f1是一个函数,--&gt;&quot;function&quot;
     console.log(typeof f2);     //f2不存在，--&gt;&quot;undefined&quot;
 </code></pre>
+<h3 id="-">项目类型</h3>
+<ul>
+<li>企业级项目：企业内部员工，企业客户--&gt;ERP/OA/CRM/CMS/财务网站<ul>
+<li>所有的企业级项目都必须登录才能访问</li>
+</ul>
+</li>
+<li>互联网项目：全部互联网用户</li>
+</ul>
 <h2 id="-">面试题：</h2>
 <h3 id="call-apply-">call/apply的异同？</h3>
 <h3 id="localstorage-sessionstorage-">localStorage/sessionStorage的区别</h3>
@@ -543,9 +615,18 @@ location.search--&gt;&quot;?id=666&amp;age=18&quot;</li>
 <ul>
 <li>location.href=&quot;页面地址&quot;    页面跳转</li>
 <li>location.reload();        页面刷新</li>
-<li>location.search        获取get请求的参数    <a href="http://www.baidu.com?name=ccc&amp;id=666--&gt;&quot;?name=ccc&amp;id=666">http://www.baidu.com?name=ccc&amp;id=666--&gt;&quot;?name=ccc&amp;id=666</a>&quot;</li>
-<li>location.hash        获取锚点/锚名        <a href="http://www.baidu.com#ccc">http://www.baidu.com#ccc</a>    --&gt;&quot;#ccc&quot;</li>
-<li>location.protocol        获取协议的名称        <a href="http://www.baidu.com">http://www.baidu.com</a>    --&gt;&quot;http:&quot;</li>
+<li>location.search        获取get请求的参数<ul>
+<li><code>http://www.baidu.com?name=ccc&amp;id=666</code>--&gt;&quot;?name=ccc&amp;id=666&quot;</li>
+</ul>
+</li>
+<li>location.hash        获取锚点/锚名<ul>
+<li><code>http://www.baidu.com#ccc</code>    --&gt;&quot;#ccc&quot;</li>
+</ul>
+</li>
+<li>location.protocol        获取协议的名称<ul>
+<li><code>http://www.baidu.com</code>    --&gt;&quot;http:&quot;</li>
+</ul>
+</li>
 <li>location.pathname        获取路径名称</li>
 </ul>
 <h3 id="ajax-">ajax的优缺点</h3>
@@ -574,14 +655,6 @@ location.search--&gt;&quot;?id=666&amp;age=18&quot;</li>
 <li>window.name</li>
 <li>iframe</li>
 <li>h5：window.postMessage</li>
-</ul>
-<h3 id="cookie-">cookie不能保存安全性较高的内容，因为这样的方式不安全</h3>
-<ul>
-<li>不能保存密码，尤其是不能明文保存密码<ul>
-<li>12306明文保存密码，数据库被攻陷了</li>
-</ul>
-</li>
-<li>甚至在一些安全性做的比较好的网站中，通过http请求发送密码的时候，会浏览器端进行加密，然后加密传输；在服务器中进行加密，加密存储在数据库中</li>
 </ul>
 
           	</article>

@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ad86a961-6dc5-419a-8592-7834094d9377" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preview/README.html" afterPath="$PROJECT_DIR$/preview/README.html" />
     </list>
     <ignored path="bxg.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,66 +26,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.js">
+      <file leaf-file-name="add.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/course/add.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="78" column="58" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="58" />
+            <state relative-caret-position="375">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="180">
-                <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
-                <folding>
-                  <marker date="1505444314239" expanded="true" signature="1119:1279" placeholder="{...}" />
-                  <marker date="1505444314239" expanded="true" signature="1129:1272" placeholder="//..." />
-                  <marker date="1505444314239" expanded="true" signature="1721:2103" placeholder="..." />
-                  <marker date="1505444314239" expanded="true" signature="1819:1888" placeholder="//..." />
-                  <marker date="1505444314239" expanded="true" signature="6377:6465" placeholder="..." />
-                  <marker date="1505444314239" expanded="true" signature="6536:6807" placeholder="..." />
-                  <marker date="1505444314239" expanded="true" signature="6552:6633" placeholder="..." />
-                  <marker date="1505444314239" expanded="true" signature="6569:6616" placeholder="..." />
-                  <marker date="1505444314239" expanded="true" signature="6649:6794" placeholder="..." />
-                  <marker date="1505444314239" expanded="true" signature="6666:6713" placeholder="..." />
-                  <marker date="1505444314239" expanded="true" signature="6730:6777" placeholder="..." />
-                  <marker date="1505444314239" expanded="true" signature="9110:9185" placeholder="{...}" />
-                </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/course/list.js">
+      <file leaf-file-name="courseAdd.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpls/courseAdd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="21" column="54" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="54" />
+            <state relative-caret-position="350">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="courseList.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpls/courseList.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="course.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imgs/course.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -102,8 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/courseTime/list.js" />
-        <option value="$PROJECT_DIR$/json/city.json" />
         <option value="$PROJECT_DIR$/补充/echart入门.html" />
         <option value="$PROJECT_DIR$/补充/echarts根据讲师列表中男女比例绘制饼图.html" />
         <option value="$PROJECT_DIR$/tpls/chart.html" />
@@ -126,7 +84,6 @@
         <option value="$PROJECT_DIR$/js/teacher/show.js" />
         <option value="$PROJECT_DIR$/补充/链式编程.html" />
         <option value="$PROJECT_DIR$/补充/日期控件.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/tpls/teacherAdd.html" />
         <option value="$PROJECT_DIR$/补充/demo1.html" />
         <option value="$PROJECT_DIR$/补充/发布订阅模式/seconde.js" />
@@ -149,10 +106,13 @@
         <option value="$PROJECT_DIR$/js/category/list.js" />
         <option value="$PROJECT_DIR$/补充/jquery对象/demo3.html" />
         <option value="$PROJECT_DIR$/js/common/myModal.js" />
-        <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/js/course/list.js" />
         <option value="$PROJECT_DIR$/tpls/courseList.html" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/main.js" />
+        <option value="$PROJECT_DIR$/js/course/add.js" />
+        <option value="$PROJECT_DIR$/tpls/courseAdd.html" />
       </list>
     </option>
   </component>
@@ -424,12 +384,12 @@
       <workItem from="1505090649820" duration="19326000" />
       <workItem from="1505176641793" duration="25190000" />
       <workItem from="1505349281579" duration="23997000" />
-      <workItem from="1505436006989" duration="7299000" />
+      <workItem from="1505436006989" duration="8765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200439000" />
+    <option name="totallyTimeSpent" value="201905000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -501,20 +461,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/index.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -644,6 +590,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="35" column="98" selection-start-line="35" selection-start-column="98" selection-end-line="35" selection-end-column="98" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -820,26 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="29" column="14" selection-start-line="24" selection-start-column="8" selection-end-line="29" selection-end-column="14" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="78" column="58" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/course/list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
@@ -864,24 +791,69 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="180">
-            <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+          <first_editor relative-caret-position="330">
+            <caret line="263" column="14" selection-start-line="263" selection-start-column="14" selection-end-line="263" selection-end-column="14" />
             <folding>
-              <marker date="1505444314239" expanded="true" signature="1119:1279" placeholder="{...}" />
-              <marker date="1505444314239" expanded="true" signature="1129:1272" placeholder="//..." />
-              <marker date="1505444314239" expanded="true" signature="1721:2103" placeholder="..." />
-              <marker date="1505444314239" expanded="true" signature="1819:1888" placeholder="//..." />
-              <marker date="1505444314239" expanded="true" signature="6377:6465" placeholder="..." />
-              <marker date="1505444314239" expanded="true" signature="6536:6807" placeholder="..." />
-              <marker date="1505444314239" expanded="true" signature="6552:6633" placeholder="..." />
-              <marker date="1505444314239" expanded="true" signature="6569:6616" placeholder="..." />
-              <marker date="1505444314239" expanded="true" signature="6649:6794" placeholder="..." />
-              <marker date="1505444314239" expanded="true" signature="6666:6713" placeholder="..." />
-              <marker date="1505444314239" expanded="true" signature="6730:6777" placeholder="..." />
-              <marker date="1505444314239" expanded="true" signature="9110:9185" placeholder="{...}" />
+              <marker date="1505445282469" expanded="true" signature="1119:1279" placeholder="{...}" />
+              <marker date="1505445282469" expanded="true" signature="1129:1272" placeholder="//..." />
+              <marker date="1505445282469" expanded="true" signature="1721:2103" placeholder="..." />
+              <marker date="1505445282469" expanded="true" signature="1819:1888" placeholder="//..." />
+              <marker date="1505445282469" expanded="true" signature="2574:2833" placeholder="{&quot;url&quot;: &quot;/api/teacher/handle&quot;...}" />
+              <marker date="1505445282469" expanded="true" signature="2620:2716" placeholder="{...}" />
+              <marker date="1505445282469" expanded="true" signature="2738:2831" placeholder="{...}" />
+              <marker date="1505445282469" expanded="true" signature="2756:2821" placeholder="//..." />
+              <marker date="1505445282469" expanded="true" signature="3499:3882" placeholder="{&quot;url&quot;: &quot;/api/teacher/add&quot;...}" />
+              <marker date="1505445282469" expanded="true" signature="3570:3881" placeholder="{...}" />
+              <marker date="1505445282469" expanded="true" signature="3592:3863" placeholder="//..." />
+              <marker date="1505445282469" expanded="true" signature="4582:4763" placeholder="{&quot;url&quot;: &quot;/api/teacher/update&quot;...}" />
+              <marker date="1505445282469" expanded="true" signature="4708:4753" placeholder="{...}" />
+              <marker date="1505445282469" expanded="true" signature="6817:6905" placeholder="..." />
+              <marker date="1505445282469" expanded="true" signature="6976:7247" placeholder="..." />
+              <marker date="1505445282469" expanded="true" signature="6992:7073" placeholder="..." />
+              <marker date="1505445282469" expanded="true" signature="7009:7056" placeholder="..." />
+              <marker date="1505445282469" expanded="true" signature="7089:7234" placeholder="..." />
+              <marker date="1505445282469" expanded="true" signature="7106:7153" placeholder="..." />
+              <marker date="1505445282469" expanded="true" signature="7170:7217" placeholder="..." />
+              <marker date="1505445282469" expanded="true" signature="9551:9626" placeholder="{...}" />
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="40" />
+          <folding>
+            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpls/courseAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/course/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
