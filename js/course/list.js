@@ -35,7 +35,13 @@ define([
                 })
                 //点击课程基本信息按钮
                 .on("click", ".btn-baseinfo", function () {
-                    courseBaseInfo();
+                    //从该按钮开始一直往上查找，直到找到类名为media的元素截止：$(this).parent().parent().parent()
+                    var $media=$(this).parents(".media");
+
+                    var cs_id=$media.attr("cs_id");
+
+
+                    courseBaseInfo(cs_id);
 
                 })
 
