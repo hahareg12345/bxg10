@@ -6,8 +6,9 @@
 define([
     "text!tpls/courseList.html",
     "jquery",
-    "template"
-],function(courseListTpl,$,template){
+    "template",
+    "course/image"      //课程图片
+],function(courseListTpl,$,template,courseImage){
 
 
     return function(){
@@ -21,7 +22,17 @@ define([
             //编译模板
             var html=template.render(courseListTpl,res);
 
-            $(".main .content-container").html(html);
+            var $html=$(html);
+
+            //给课程列表中的图片绑定单击事件
+            $html.on("click","a",function(){
+                var cs_id=$(this).parent().parent().attr("cs_id");
+
+                //调用课程图片模块
+                courseImage(cs_id);
+            })
+
+            $(".main .content-container").html($html);
         })
     }
 })

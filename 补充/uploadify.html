@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/uploadify/uploadify.css">
+</head>
+<body>
+    <input type="file" id="fileUpload" name="">
+
+    <input type="button" value="上传" id="btn">
+</body>
+<script src="../js/lib/jquery-2.1.4.js"></script>
+<script src="../assets/uploadify/jquery.uploadify.js"></script>
+<script>
+
+    //在/api/uploader/cover对应的文档中
+    //参数1：cs_id：数字类型
+    //参数2：cs_cover_original：stream：数据流类型(一段一段的传输)
+    //-->在使用uploadify传递这2个参数的时候：
+    //  -->cs_id作为formData
+    //  -->cs_cover_original作为fileObjName来传入
+
+    $("#fileUpload").uploadify({
+        //选择完文件是否自动上传
+        auto:false,
+        //额外提交的一些参数
+        formData:{
+          cs_id:4
+        },
+        //作为装载文件内容的name值
+        fileObjName:"cs_cover_original",
+
+        //参数
+        height        : 30,
+        //flash文件
+        swf           : '../assets/uploadify/uploadify.swf',
+        //服务器地址  /api/teacher
+        uploader      : '/api/uploader/cover',
+        width         : 120,
+        //指定上传文件的扩展名        -->达到限定文件类型的目的
+        fileTypeExts : '*.gif; *.jpg; *.png; *.jpeg',
+
+        //指定上传过程中显示的模板内容
+//        itemTemplate:"<span></span>",        //无内容
+
+        //指定用户一次性是否可以选择多个文件
+//        multi:false               //默认值为：true
+
+        //指定上传队列最大文件数量
+        queueSizeLimit:3,
+
+        //等到上传成功调用该方法
+        onUploadSuccess : function(file, data, response) {
+
+            console.log(file);      //上传的文件信息：文件名
+            console.log(data);      //服务器返回的数据
+            console.log(response);
+        }
+    });
+
+    $("#btn").on("click",function(){
+
+        //调用uploadify里面的上传的方法
+        //$("#fileUpload").uploadify("upload");       //点一次上传一个
+
+
+        $("#fileUpload").uploadify("upload","*");   //把上传队列中所有文件一次性上传
+    })
+</script>
+</html>
