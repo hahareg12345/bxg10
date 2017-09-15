@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad86a961-6dc5-419a-8592-7834094d9377" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/course/list.js" afterPath="$PROJECT_DIR$/js/course/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpls/courseList.html" afterPath="$PROJECT_DIR$/tpls/courseList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="bxg.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,6 +34,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="400">
+                <caret line="279" column="21" selection-start-line="279" selection-start-column="21" selection-end-line="279" selection-end-column="21" />
+                <folding>
+                  <marker date="1505443695230" expanded="true" signature="990:1078" placeholder="..." />
+                  <marker date="1505443695230" expanded="true" signature="1144:1359" placeholder="..." />
+                  <marker date="1505443695230" expanded="true" signature="1156:1221" placeholder="..." />
+                  <marker date="1505443695230" expanded="true" signature="1169:1208" placeholder="..." />
+                  <marker date="1505443695230" expanded="true" signature="1233:1350" placeholder="..." />
+                  <marker date="1505443695230" expanded="true" signature="1246:1285" placeholder="..." />
+                  <marker date="1505443695230" expanded="true" signature="1298:1337" placeholder="..." />
+                  <marker date="1505443695230" expanded="true" signature="2029:2189" placeholder="{...}" />
+                  <marker date="1505443695230" expanded="true" signature="2039:2092" placeholder="//..." />
+                  <marker date="1505443695230" expanded="true" signature="2039:2108" placeholder="//..." />
+                  <marker date="1505443695230" expanded="true" signature="2039:2132" placeholder="//..." />
+                  <marker date="1505443695230" expanded="true" signature="2039:2171" placeholder="//..." />
+                  <marker date="1505443695230" expanded="true" signature="2039:2182" placeholder="//..." />
+                  <marker date="1505443695230" expanded="true" signature="2337:2719" placeholder="..." />
+                  <marker date="1505443695230" expanded="true" signature="2435:2504" placeholder="//..." />
+                  <marker date="1505443695230" expanded="true" signature="9080:9155" placeholder="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/course/list.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -44,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="courseList.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="courseList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpls/courseList.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
@@ -119,7 +149,6 @@
         <option value="$PROJECT_DIR$/tpls/categoryList.html" />
         <option value="$PROJECT_DIR$/tpls/categoryEdit.html" />
         <option value="$PROJECT_DIR$/js/category/edit.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/补充/jquery对象/demo2.html" />
         <option value="$PROJECT_DIR$/js/category/add.js" />
         <option value="$PROJECT_DIR$/js/category/list.js" />
@@ -128,6 +157,7 @@
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/js/course/list.js" />
         <option value="$PROJECT_DIR$/tpls/courseList.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -399,12 +429,12 @@
       <workItem from="1505090649820" duration="19326000" />
       <workItem from="1505176641793" duration="25190000" />
       <workItem from="1505349281579" duration="23997000" />
-      <workItem from="1505436006989" duration="6588000" />
+      <workItem from="1505436006989" duration="6697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199728000" />
+    <option name="totallyTimeSpent" value="199837000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -731,34 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="225">
-            <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-            <folding>
-              <marker date="1505436593320" expanded="true" signature="990:1078" placeholder="..." />
-              <marker date="1505436593320" expanded="true" signature="1144:1359" placeholder="..." />
-              <marker date="1505436593320" expanded="true" signature="1156:1221" placeholder="..." />
-              <marker date="1505436593320" expanded="true" signature="1169:1208" placeholder="..." />
-              <marker date="1505436593320" expanded="true" signature="1233:1350" placeholder="..." />
-              <marker date="1505436593320" expanded="true" signature="1246:1285" placeholder="..." />
-              <marker date="1505436593320" expanded="true" signature="1298:1337" placeholder="..." />
-              <marker date="1505436593320" expanded="true" signature="2029:2189" placeholder="{...}" />
-              <marker date="1505436593320" expanded="true" signature="2039:2092" placeholder="//..." />
-              <marker date="1505436593320" expanded="true" signature="2039:2108" placeholder="//..." />
-              <marker date="1505436593320" expanded="true" signature="2039:2132" placeholder="//..." />
-              <marker date="1505436593320" expanded="true" signature="2039:2171" placeholder="//..." />
-              <marker date="1505436593320" expanded="true" signature="2039:2182" placeholder="//..." />
-              <marker date="1505436593320" expanded="true" signature="2337:2719" placeholder="..." />
-              <marker date="1505436593320" expanded="true" signature="2435:2504" placeholder="//..." />
-              <marker date="1505436593320" expanded="true" signature="8931:9006" placeholder="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/teacher/list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
@@ -861,6 +863,34 @@
         <state relative-caret-position="425">
           <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="400">
+            <caret line="279" column="21" selection-start-line="279" selection-start-column="21" selection-end-line="279" selection-end-column="21" />
+            <folding>
+              <marker date="1505443695230" expanded="true" signature="990:1078" placeholder="..." />
+              <marker date="1505443695230" expanded="true" signature="1144:1359" placeholder="..." />
+              <marker date="1505443695230" expanded="true" signature="1156:1221" placeholder="..." />
+              <marker date="1505443695230" expanded="true" signature="1169:1208" placeholder="..." />
+              <marker date="1505443695230" expanded="true" signature="1233:1350" placeholder="..." />
+              <marker date="1505443695230" expanded="true" signature="1246:1285" placeholder="..." />
+              <marker date="1505443695230" expanded="true" signature="1298:1337" placeholder="..." />
+              <marker date="1505443695230" expanded="true" signature="2029:2189" placeholder="{...}" />
+              <marker date="1505443695230" expanded="true" signature="2039:2092" placeholder="//..." />
+              <marker date="1505443695230" expanded="true" signature="2039:2108" placeholder="//..." />
+              <marker date="1505443695230" expanded="true" signature="2039:2132" placeholder="//..." />
+              <marker date="1505443695230" expanded="true" signature="2039:2171" placeholder="//..." />
+              <marker date="1505443695230" expanded="true" signature="2039:2182" placeholder="//..." />
+              <marker date="1505443695230" expanded="true" signature="2337:2719" placeholder="..." />
+              <marker date="1505443695230" expanded="true" signature="2435:2504" placeholder="//..." />
+              <marker date="1505443695230" expanded="true" signature="9080:9155" placeholder="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
