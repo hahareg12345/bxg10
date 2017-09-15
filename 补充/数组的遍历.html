@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var array=[
+        {cg_id:1,cg_name:"HTML/CSS"},
+
+        {cg_id:2,cg_name:"HTML5/CSS3"},
+
+        {cg_id:3,cg_name:"HTML6/CSS5"}
+    ];
+
+    //map方法返回一个数组，数组中每一个元素的值由每一次回调函数的返回值组成
+    array=array.map(function(v){
+        return "<option value='"+v.cg_id+"'>"+v.cg_name+"</option>";
+    });
+
+    alert(array.join(" ")); //拼接出一个大的字符串
+</script>
+</html>
