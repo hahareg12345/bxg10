@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad86a961-6dc5-419a-8592-7834094d9377" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/course/image.js" afterPath="$PROJECT_DIR$/js/course/image.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpls/courseImage.html" afterPath="$PROJECT_DIR$/tpls/courseImage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="bxg.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,12 +24,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="courseImage.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tpls/courseImage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="14" column="107" selection-start-line="14" selection-start-column="107" selection-end-line="14" selection-end-column="107" />
-              <folding />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="355">
+                <caret line="291" column="23" selection-start-line="291" selection-start-column="23" selection-end-line="291" selection-end-column="23" />
+                <folding>
+                  <marker date="1505462216224" expanded="true" signature="1119:1279" placeholder="{...}" />
+                  <marker date="1505462216224" expanded="true" signature="1129:1272" placeholder="//..." />
+                  <marker date="1505462216224" expanded="true" signature="1721:2103" placeholder="..." />
+                  <marker date="1505462216224" expanded="true" signature="1819:1888" placeholder="//..." />
+                  <marker date="1505462216224" expanded="true" signature="2574:2833" placeholder="{&quot;url&quot;: &quot;/api/teacher/handle&quot;...}" />
+                  <marker date="1505462216224" expanded="true" signature="2620:2716" placeholder="{...}" />
+                  <marker date="1505462216224" expanded="true" signature="2738:2831" placeholder="{...}" />
+                  <marker date="1505462216224" expanded="true" signature="2756:2821" placeholder="//..." />
+                  <marker date="1505462216224" expanded="true" signature="3499:3882" placeholder="{&quot;url&quot;: &quot;/api/teacher/add&quot;...}" />
+                  <marker date="1505462216224" expanded="true" signature="3570:3881" placeholder="{...}" />
+                  <marker date="1505462216224" expanded="true" signature="3592:3863" placeholder="//..." />
+                  <marker date="1505462216224" expanded="true" signature="4582:4763" placeholder="{&quot;url&quot;: &quot;/api/teacher/update&quot;...}" />
+                  <marker date="1505462216224" expanded="true" signature="4708:4753" placeholder="{...}" />
+                  <marker date="1505462216224" expanded="true" signature="7106:7194" placeholder="..." />
+                  <marker date="1505462216224" expanded="true" signature="7265:7536" placeholder="..." />
+                  <marker date="1505462216224" expanded="true" signature="7281:7362" placeholder="..." />
+                  <marker date="1505462216224" expanded="true" signature="7298:7345" placeholder="..." />
+                  <marker date="1505462216224" expanded="true" signature="7378:7523" placeholder="..." />
+                  <marker date="1505462216224" expanded="true" signature="7395:7442" placeholder="..." />
+                  <marker date="1505462216224" expanded="true" signature="7459:7506" placeholder="..." />
+                  <marker date="1505462216224" expanded="true" signature="9840:9915" placeholder="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -91,7 +114,6 @@
         <option value="$PROJECT_DIR$/js/category/list.js" />
         <option value="$PROJECT_DIR$/补充/jquery对象/demo3.html" />
         <option value="$PROJECT_DIR$/js/common/myModal.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/tpls/courseAdd.html" />
         <option value="$PROJECT_DIR$/js/course/add.js" />
         <option value="$PROJECT_DIR$/assets/uploadify/uploadify.css" />
@@ -103,6 +125,7 @@
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/js/course/image.js" />
         <option value="$PROJECT_DIR$/tpls/courseImage.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -442,12 +465,12 @@
       <workItem from="1505090649820" duration="19326000" />
       <workItem from="1505176641793" duration="25190000" />
       <workItem from="1505349281579" duration="23997000" />
-      <workItem from="1505436006989" duration="15219000" />
+      <workItem from="1505436006989" duration="15863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208359000" />
+    <option name="totallyTimeSpent" value="209003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -781,39 +804,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="330">
-            <caret line="263" column="14" selection-start-line="263" selection-start-column="14" selection-end-line="263" selection-end-column="14" />
-            <folding>
-              <marker date="1505445282469" expanded="true" signature="1119:1279" placeholder="{...}" />
-              <marker date="1505445282469" expanded="true" signature="1129:1272" placeholder="//..." />
-              <marker date="1505445282469" expanded="true" signature="1721:2103" placeholder="..." />
-              <marker date="1505445282469" expanded="true" signature="1819:1888" placeholder="//..." />
-              <marker date="1505445282469" expanded="true" signature="2574:2833" placeholder="{&quot;url&quot;: &quot;/api/teacher/handle&quot;...}" />
-              <marker date="1505445282469" expanded="true" signature="2620:2716" placeholder="{...}" />
-              <marker date="1505445282469" expanded="true" signature="2738:2831" placeholder="{...}" />
-              <marker date="1505445282469" expanded="true" signature="2756:2821" placeholder="//..." />
-              <marker date="1505445282469" expanded="true" signature="3499:3882" placeholder="{&quot;url&quot;: &quot;/api/teacher/add&quot;...}" />
-              <marker date="1505445282469" expanded="true" signature="3570:3881" placeholder="{...}" />
-              <marker date="1505445282469" expanded="true" signature="3592:3863" placeholder="//..." />
-              <marker date="1505445282469" expanded="true" signature="4582:4763" placeholder="{&quot;url&quot;: &quot;/api/teacher/update&quot;...}" />
-              <marker date="1505445282469" expanded="true" signature="4708:4753" placeholder="{...}" />
-              <marker date="1505445282469" expanded="true" signature="6817:6905" placeholder="..." />
-              <marker date="1505445282469" expanded="true" signature="6976:7247" placeholder="..." />
-              <marker date="1505445282469" expanded="true" signature="6992:7073" placeholder="..." />
-              <marker date="1505445282469" expanded="true" signature="7009:7056" placeholder="..." />
-              <marker date="1505445282469" expanded="true" signature="7089:7234" placeholder="..." />
-              <marker date="1505445282469" expanded="true" signature="7106:7153" placeholder="..." />
-              <marker date="1505445282469" expanded="true" signature="7170:7217" placeholder="..." />
-              <marker date="1505445282469" expanded="true" signature="9551:9626" placeholder="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpls/courseAdd.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -929,6 +919,39 @@
         <state relative-caret-position="375">
           <caret line="14" column="107" selection-start-line="14" selection-start-column="107" selection-end-line="14" selection-end-column="107" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="355">
+            <caret line="291" column="23" selection-start-line="291" selection-start-column="23" selection-end-line="291" selection-end-column="23" />
+            <folding>
+              <marker date="1505462216224" expanded="true" signature="1119:1279" placeholder="{...}" />
+              <marker date="1505462216224" expanded="true" signature="1129:1272" placeholder="//..." />
+              <marker date="1505462216224" expanded="true" signature="1721:2103" placeholder="..." />
+              <marker date="1505462216224" expanded="true" signature="1819:1888" placeholder="//..." />
+              <marker date="1505462216224" expanded="true" signature="2574:2833" placeholder="{&quot;url&quot;: &quot;/api/teacher/handle&quot;...}" />
+              <marker date="1505462216224" expanded="true" signature="2620:2716" placeholder="{...}" />
+              <marker date="1505462216224" expanded="true" signature="2738:2831" placeholder="{...}" />
+              <marker date="1505462216224" expanded="true" signature="2756:2821" placeholder="//..." />
+              <marker date="1505462216224" expanded="true" signature="3499:3882" placeholder="{&quot;url&quot;: &quot;/api/teacher/add&quot;...}" />
+              <marker date="1505462216224" expanded="true" signature="3570:3881" placeholder="{...}" />
+              <marker date="1505462216224" expanded="true" signature="3592:3863" placeholder="//..." />
+              <marker date="1505462216224" expanded="true" signature="4582:4763" placeholder="{&quot;url&quot;: &quot;/api/teacher/update&quot;...}" />
+              <marker date="1505462216224" expanded="true" signature="4708:4753" placeholder="{...}" />
+              <marker date="1505462216224" expanded="true" signature="7106:7194" placeholder="..." />
+              <marker date="1505462216224" expanded="true" signature="7265:7536" placeholder="..." />
+              <marker date="1505462216224" expanded="true" signature="7281:7362" placeholder="..." />
+              <marker date="1505462216224" expanded="true" signature="7298:7345" placeholder="..." />
+              <marker date="1505462216224" expanded="true" signature="7378:7523" placeholder="..." />
+              <marker date="1505462216224" expanded="true" signature="7395:7442" placeholder="..." />
+              <marker date="1505462216224" expanded="true" signature="7459:7506" placeholder="..." />
+              <marker date="1505462216224" expanded="true" signature="9840:9915" placeholder="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
