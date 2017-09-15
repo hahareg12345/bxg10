@@ -8,8 +8,9 @@ define([
     "jquery",
     "template",
     "course/image",      //课程图片
-    "course/baseInfo"    //课程基本信息模块
-], function (courseListTpl, $, template, courseImage,courseBaseInfo) {
+    "course/baseInfo",    //课程基本信息模块
+    "courseTime/list"       //课时列表
+], function (courseListTpl, $, template, courseImage,courseBaseInfo,courseTimeList) {
 
 
     return function () {
@@ -42,6 +43,13 @@ define([
 
 
                     courseBaseInfo(cs_id);
+
+                })
+                .on("click",".btn-time",function(){
+                    var $media=$(this).parents(".media");
+                    var cs_id=$media.attr("cs_id");
+
+                    courseTimeList(cs_id);
 
                 })
 

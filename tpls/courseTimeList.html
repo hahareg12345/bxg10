@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <!--路径导航-->
+        <ol class="breadcrumb">
+            <li><a href="#">课时管理</a></li>
+            <li class="active">课时列表</li>
+        </ol>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">课程基本信息</div>
+            <div class="panel-body">
+                <div class="media">
+                    <!--左侧-->
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="{{cs_cover}}" width="240" height="120">
+                        </a>
+                    </div>
+                    <!--右侧-->
+                    <div class="media-body">
+                        <h4>课程名称：{{cs_name}}</h4>
+                        <h4>讲师名称：{{tc_name}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">课时信息</div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>名称</th>
+                        <th>时长</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{each lessons}}
+                    <tr>
+                        <td>{{$value.ct_id}}</td>
+                        <td>{{$value.ct_name}}</td>
+                        <td>{{$value.ct_video_duration}}</td>
+                        <td>
+                            <button class="btn btn-primary">编辑</button>
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
