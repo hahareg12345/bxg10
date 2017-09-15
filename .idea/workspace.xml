@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad86a961-6dc5-419a-8592-7834094d9377" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/courseTime/list.js" afterPath="$PROJECT_DIR$/js/courseTime/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpls/courseTimeList.html" afterPath="$PROJECT_DIR$/tpls/courseTimeList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="bxg.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,12 +23,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="edit.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/courseTime/edit.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+              <caret line="32" column="32" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="32" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="180">
+                <caret line="296" column="9" selection-start-line="296" selection-start-column="9" selection-end-line="296" selection-end-column="9" />
+                <folding>
+                  <marker date="1505470392983" expanded="true" signature="1119:1279" placeholder="{...}" />
+                  <marker date="1505470392983" expanded="true" signature="1129:1272" placeholder="//..." />
+                  <marker date="1505470392983" expanded="true" signature="1721:2103" placeholder="..." />
+                  <marker date="1505470392983" expanded="true" signature="1819:1888" placeholder="//..." />
+                  <marker date="1505470392983" expanded="true" signature="2574:2833" placeholder="{&quot;url&quot;: &quot;/api/teacher/handle&quot;...}" />
+                  <marker date="1505470392983" expanded="true" signature="2620:2716" placeholder="{...}" />
+                  <marker date="1505470392983" expanded="true" signature="2738:2831" placeholder="{...}" />
+                  <marker date="1505470392983" expanded="true" signature="2756:2821" placeholder="//..." />
+                  <marker date="1505470392983" expanded="true" signature="3499:3882" placeholder="{&quot;url&quot;: &quot;/api/teacher/add&quot;...}" />
+                  <marker date="1505470392983" expanded="true" signature="3570:3881" placeholder="{...}" />
+                  <marker date="1505470392983" expanded="true" signature="3592:3863" placeholder="//..." />
+                  <marker date="1505470392983" expanded="true" signature="4582:4763" placeholder="{&quot;url&quot;: &quot;/api/teacher/update&quot;...}" />
+                  <marker date="1505470392983" expanded="true" signature="4708:4753" placeholder="{...}" />
+                  <marker date="1505470392983" expanded="true" signature="7338:7426" placeholder="..." />
+                  <marker date="1505470392983" expanded="true" signature="7497:7768" placeholder="..." />
+                  <marker date="1505470392983" expanded="true" signature="7513:7594" placeholder="..." />
+                  <marker date="1505470392983" expanded="true" signature="7530:7577" placeholder="..." />
+                  <marker date="1505470392983" expanded="true" signature="7610:7755" placeholder="..." />
+                  <marker date="1505470392983" expanded="true" signature="7627:7674" placeholder="..." />
+                  <marker date="1505470392983" expanded="true" signature="7691:7738" placeholder="..." />
+                  <marker date="1505470392983" expanded="true" signature="10072:10147" placeholder="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -37,8 +71,8 @@
       <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/courseTime/list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="30" column="21" selection-start-line="27" selection-start-column="41" selection-end-line="30" selection-end-column="21" />
+            <state relative-caret-position="412">
+              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -109,7 +143,6 @@
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/js/course/image.js" />
         <option value="$PROJECT_DIR$/tpls/courseImage.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/index.less" />
         <option value="$PROJECT_DIR$/tpls/courseBaseInfo.html" />
@@ -121,6 +154,7 @@
         <option value="$PROJECT_DIR$/tpls/courseTimeEdit.html" />
         <option value="$PROJECT_DIR$/js/courseTime/list.js" />
         <option value="$PROJECT_DIR$/js/courseTime/edit.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -357,46 +391,6 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploadify" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bxg10" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bxg10" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploadify" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="__MACOSX" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bxg10" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bxg10" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -510,18 +504,18 @@
       <workItem from="1505090649820" duration="19326000" />
       <workItem from="1505176641793" duration="25190000" />
       <workItem from="1505349281579" duration="23997000" />
-      <workItem from="1505436006989" duration="23274000" />
+      <workItem from="1505436006989" duration="23863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216414000" />
+    <option name="totallyTimeSpent" value="217003000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24450952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24450952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268921" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -869,39 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="355">
-            <caret line="291" column="23" selection-start-line="291" selection-start-column="23" selection-end-line="291" selection-end-column="23" />
-            <folding>
-              <marker date="1505462216224" expanded="true" signature="1119:1279" placeholder="{...}" />
-              <marker date="1505462216224" expanded="true" signature="1129:1272" placeholder="//..." />
-              <marker date="1505462216224" expanded="true" signature="1721:2103" placeholder="..." />
-              <marker date="1505462216224" expanded="true" signature="1819:1888" placeholder="//..." />
-              <marker date="1505462216224" expanded="true" signature="2574:2833" placeholder="{&quot;url&quot;: &quot;/api/teacher/handle&quot;...}" />
-              <marker date="1505462216224" expanded="true" signature="2620:2716" placeholder="{...}" />
-              <marker date="1505462216224" expanded="true" signature="2738:2831" placeholder="{...}" />
-              <marker date="1505462216224" expanded="true" signature="2756:2821" placeholder="//..." />
-              <marker date="1505462216224" expanded="true" signature="3499:3882" placeholder="{&quot;url&quot;: &quot;/api/teacher/add&quot;...}" />
-              <marker date="1505462216224" expanded="true" signature="3570:3881" placeholder="{...}" />
-              <marker date="1505462216224" expanded="true" signature="3592:3863" placeholder="//..." />
-              <marker date="1505462216224" expanded="true" signature="4582:4763" placeholder="{&quot;url&quot;: &quot;/api/teacher/update&quot;...}" />
-              <marker date="1505462216224" expanded="true" signature="4708:4753" placeholder="{...}" />
-              <marker date="1505462216224" expanded="true" signature="7106:7194" placeholder="..." />
-              <marker date="1505462216224" expanded="true" signature="7265:7536" placeholder="..." />
-              <marker date="1505462216224" expanded="true" signature="7281:7362" placeholder="..." />
-              <marker date="1505462216224" expanded="true" signature="7298:7345" placeholder="..." />
-              <marker date="1505462216224" expanded="true" signature="7378:7523" placeholder="..." />
-              <marker date="1505462216224" expanded="true" signature="7395:7442" placeholder="..." />
-              <marker date="1505462216224" expanded="true" signature="7459:7506" placeholder="..." />
-              <marker date="1505462216224" expanded="true" signature="9840:9915" placeholder="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-294">
@@ -1000,19 +961,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/courseTime/list.js">
+    <entry file="file://$PROJECT_DIR$/js/courseTime/edit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="30" column="21" selection-start-line="27" selection-start-column="41" selection-end-line="30" selection-end-column="21" />
+        <state relative-caret-position="425">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/courseTime/edit.js">
+    <entry file="file://$PROJECT_DIR$/js/courseTime/list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        <state relative-caret-position="412">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="180">
+            <caret line="296" column="9" selection-start-line="296" selection-start-column="9" selection-end-line="296" selection-end-column="9" />
+            <folding>
+              <marker date="1505470392983" expanded="true" signature="1119:1279" placeholder="{...}" />
+              <marker date="1505470392983" expanded="true" signature="1129:1272" placeholder="//..." />
+              <marker date="1505470392983" expanded="true" signature="1721:2103" placeholder="..." />
+              <marker date="1505470392983" expanded="true" signature="1819:1888" placeholder="//..." />
+              <marker date="1505470392983" expanded="true" signature="2574:2833" placeholder="{&quot;url&quot;: &quot;/api/teacher/handle&quot;...}" />
+              <marker date="1505470392983" expanded="true" signature="2620:2716" placeholder="{...}" />
+              <marker date="1505470392983" expanded="true" signature="2738:2831" placeholder="{...}" />
+              <marker date="1505470392983" expanded="true" signature="2756:2821" placeholder="//..." />
+              <marker date="1505470392983" expanded="true" signature="3499:3882" placeholder="{&quot;url&quot;: &quot;/api/teacher/add&quot;...}" />
+              <marker date="1505470392983" expanded="true" signature="3570:3881" placeholder="{...}" />
+              <marker date="1505470392983" expanded="true" signature="3592:3863" placeholder="//..." />
+              <marker date="1505470392983" expanded="true" signature="4582:4763" placeholder="{&quot;url&quot;: &quot;/api/teacher/update&quot;...}" />
+              <marker date="1505470392983" expanded="true" signature="4708:4753" placeholder="{...}" />
+              <marker date="1505470392983" expanded="true" signature="7338:7426" placeholder="..." />
+              <marker date="1505470392983" expanded="true" signature="7497:7768" placeholder="..." />
+              <marker date="1505470392983" expanded="true" signature="7513:7594" placeholder="..." />
+              <marker date="1505470392983" expanded="true" signature="7530:7577" placeholder="..." />
+              <marker date="1505470392983" expanded="true" signature="7610:7755" placeholder="..." />
+              <marker date="1505470392983" expanded="true" signature="7627:7674" placeholder="..." />
+              <marker date="1505470392983" expanded="true" signature="7691:7738" placeholder="..." />
+              <marker date="1505470392983" expanded="true" signature="10072:10147" placeholder="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
