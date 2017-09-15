@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function jQuery(selector){
+        return new jQuery.fn.init(selector);
+    }
+    jQuery.fn=jQuery.prototype={
+        constructor:jQuery,
+        init:function(selector){
+            var doms=document.querySelectorAll(selector);
+            [].push.apply(this,doms);
+        }
+    };
+
+    jQuery.fn.init.prototype=jQuery.fn;
+
+    console.log(jQuery("body"));
+</script>
+</html>

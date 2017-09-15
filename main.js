@@ -40,12 +40,13 @@ require([
     "jquery",
     "teacher/list",
     "category/list",        //分类列表
+    "course/list",          //课程列表
     "cookie",
     "bootstrap",
     "datetimepicker",        //日期控件
     "datetimepickerlang",     //日期控件的语言包
     "common/myModal"        //自己写的牛逼哄哄的一个基于bootstrap的模态框插件
-],function($,teacherList,categoryList){
+],function($,teacherList,categoryList,courseList){
     //template就是arttemplate模板引擎的入口函数
 
 
@@ -64,7 +65,9 @@ require([
                 break;
             //课程管理
             case "course":
-                $(".main .content-container").html("课程管理")
+                courseList();
+                
+                
                 break;
             //课程分类
             case "category":
