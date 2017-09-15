@@ -5,36 +5,58 @@
     <title>Title</title>
 </head>
 <body>
-
+<input type="text">
 </body>
 <script src="../../js/lib/jquery-2.1.4.js"></script>
 <script>
+    var body1=document.body;//body1保留了对于页面中body元素的内存地址的引用
+    var body2=document.body;////body2保留了对于页面中body元素的内存地址的引用
+    console.log(body1==body2);  //true
+
+    var input1=document.querySelector("input");
+    var input2=document.getElementsByTagName("input")[0];
+    console.log(input1==input2);    //把同一个对象的内存地址分别存放在了2个变量中，true
+
     //结论1：
-    var o1={age:18};
-    var o2={age:18};
+    var o1={age:18};        //new Object()      -->开辟了内存
+    var o2={age:18};        //new Object()      -->开辟了内存
 
     console.log(o2==o1);//false
 
     //结论2：
-    var div1=document.createElement("div");
-    var div2=document.createElement("div");
+    //1、所有的DOM元素都是对象类型的数据 2、创建一个DOM元素就是创建了一个对象
+    var div1=document.createElement("div");     //想当于：new Div()
+    var div2=document.createElement("div");     //new Div()
     console.log(div1==div2);//false
 
     //结论3：
+    //1、每一次调用$()都会创建一个对象-->开辟内存
     console.log($("body")==$("body"));//false
 
     //结论4：
+    //因为$("body")是一个jquery对象，jquery对象里面含有是DOM元素,$("body")里面只有一个body元素，body元素来自于页面
+    //$("body")是另一个jquery对象，jquery对象里面含有是DOM元素，$("body")里面只有一个body元素，body元素来自于页面
+    //-->页面中只有一个body元素，所以这两个body元素是同一个DOM元素-->body元素是同一个对象-->他们的内存地址相同
     console.log($("body")[0]==$("body")[0]);//true
 
     //结论5：-->原因同：结论3
-    console.log($("<input/>")==$("<input/>"));//false
+    //a、$1和$2不是同一个对象，$1==$2?false
+    //b、$1[0]：根据一个html字符串手动创建出来的一个全新的DOM元素  $2[0]根据一个html字符串手动创建出来的一个全新的DOM元素
+    //      -->这2个DOM元素指向不同的内存地址        -->$1[0] != $2[0]
+    var $1=$("<input/>");
+    var $2=$("<input/>");
+    console.log($1[0]==$2[0]);//false
 
     //结论6：
-    var input="<input/>";
-
-    var $input1=$(input);
-    var $input2=$(input);
-
-    console.log($input1[0]==$input2[0]);//false
+    var input="<input type='button'/>";
+    //-->a、$(input)根据input标签的字符串创建出一个input元素（DOM1）-->创建一个新的对象-->把这个DOM元素放到jquery对象中，事件绑定也是基于这个DOM元素
+    $(input).on("click",function(){
+        alert("1");
+    });
+    //-->b、$(input)根据input标签的字符串创建出一个input元素（DOM2）-->创建一个新的对象-->把这个DOM元素放到jquery对象中-->把DOM元素放到页面中
+    //-->结论：放到页面中的是DOM2
+    //      -->绑定事件的是DOM1
+    //      -->由于DOM1和DOM2不是同一个对象，所以事件绑定失败
+    $(input).appendTo("body");      //结果：点击页面中的按钮并没有事件触发
 </script>
 </html>

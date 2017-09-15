@@ -55,7 +55,7 @@ define([
                                 url:"/api/category/modify",
                                 type:"post",
                                 data:formData,
-                                success:function(res){
+                                success:function(){
                                     //隐藏模态框
                                     $html.modal("hide");
                                     //刷新分类列表

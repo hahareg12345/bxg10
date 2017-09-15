@@ -1,4 +1,6 @@
 # 博学谷项目介绍文档
+## 博学谷项目git仓库地址：git@github.com:hahareg12345/bxg10.git
+
 ## 接口文档：http://doc.botue.com/
 
 ## 项目结构：
