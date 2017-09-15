@@ -1,5 +1,7 @@
 # 博学谷项目介绍文档
-## 博学谷项目git仓库地址：git@github.com:hahareg12345/bxg10.git
+## 博学谷项目git仓库地址：
++ https://github.com/hahareg12345/bxg10.git
++ git@github.com:hahareg12345/bxg10.git
 
 ## 接口文档：http://doc.botue.com/
 
@@ -26,45 +28,40 @@ bxg10/
     login.html  登录页(并不使用requirejs)
 ```
 
-## requireJS中什么时候使用shim
+## requireJS补充
+### 什么时候使用shim
 + shim只用于第三方模块
 + shim一般适用于：a、引入了2个第三方模块，b、之间存在依赖，c、其中一个不支持AMD规范
     - 例如：导入了jquery/bootstrap，bootstrap依赖了jquery，bootstrap不支持AMD规范，所以采用了shim
 
-## bootstrap布局
-+ 表格布局中
-    - `<td rowspan="5">111</td>`  表示该列跨了5行
-    - `<td colspan="3">555</td>`  表示该列跨了5列
+### 如果引用了2个第三方模块，2个第三方模块都支持AMD规范，那么就可以使用AMD规范中的写法
++ 把依赖项放在数组中
+    - 举例
+        - cart.js依赖了product.js+shop.js
+        - 在cart.js文件中，通过以下代码实现模块依赖
+        ```js
+        define(["product","shop"],function(){})
+        ```
 
-+ 在bootstrap中给一个标签设置一个类名为text-center就可以自动实现：`文字`水平居中
-+ 按钮
-    - 给一个按钮设置一个btn-success  -->按钮呈现绿色的背景
-    - 。。。。。。。。。btn-block    -->按钮的宽度=容器的宽度
-+ 面板
-```html
-<div class="panel panel-default">
-    <div class="panel-heading">面板标题</div>
-    <div class="panel-body">面板内容</div>
-</div>
+### requirejs中使用arttemplate模板引擎
++ 1、把代码放到项目中的指定位置
++ 2、配置模板引擎的路径
++ 3、在需要编译模板的文件中导入该模块，可以通过形参获取模板引擎的入口函数
+
+```js
+    require(["template"],function(template){
+        //这里的形参template就是arttemplate模板引擎的入口函数
+        //1、常用的API
+        //1.1、template(script的id,数据)
+        //1.2、template.render(模板内容,数据)
+        //
+
+    })
 ```
-+ 表格
-```html
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <td>aaa</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>bbb</td>
-        </tr>
-        <tr>
-            <td>ccc</td>
-        </tr>
-    </tbody>
-</table>
-```
+
+
+
+
 
 ## jquery事件绑定
 + 每一次提交表单都会触发表单的submit事件
@@ -82,33 +79,6 @@ bxg10/
     + tc_name
 3. 核对字段的值
 
-
-
-
-## 如果引用了2个第三方模块，2个第三方模块都支持AMD规范，那么就可以使用AMD规范中的写法
-+ 把依赖项放在数组中
-    - 举例
-        - cart.js依赖了product.js+shop.js
-        - 在cart.js文件中，通过以下代码实现模块依赖
-        ```js
-        define(["product","shop"],function(){})
-        ```
-
-## requirejs中使用arttemplate模板引擎
-+ 1、把代码放到项目中的指定位置
-+ 2、配置模板引擎的路径
-+ 3、在需要编译模板的文件中导入该模块，可以通过形参获取模板引擎的入口函数
-
-```js
-    require(["template"],function(template){
-        //这里的形参template就是arttemplate模板引擎的入口函数
-        //1、常用的API
-        //1.1、template(script的id,数据)
-        //1.2、template.render(模板内容,数据)
-        //
-
-    })
-```
 
 ## 功能的实现思路
 ### 渲染讲师列表
@@ -279,6 +249,42 @@ bxg10/
 	- 把数据通过arttemplate编译到模板中
 	- 把真实内容放到页面中的指定位置
 
+## bootstrap布局
++ 表格布局中
+    - `<td rowspan="5">111</td>`  表示该列跨了5行
+    - `<td colspan="3">555</td>`  表示该列跨了5列
+
++ 在bootstrap中给一个标签设置一个类名为text-center就可以自动实现：`文字`水平居中
++ 按钮
+    - 给一个按钮设置一个btn-success  -->按钮呈现绿色的背景
+    - 。。。。。。。。。btn-block    -->按钮的宽度=容器的宽度
++ 面板
+```html
+<div class="panel panel-default">
+    <div class="panel-heading">面板标题</div>
+    <div class="panel-body">面板内容</div>
+</div>
+```
++ 表格
+
+```html
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td>aaa</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>bbb</td>
+            </tr>
+            <tr>
+                <td>ccc</td>
+            </tr>
+        </tbody>
+    </table>
+```
+
 
 ## 老师可以把cookie再举多一个例子帮助消化吗?
 ### cookie的用法-->jquery.cookie.js
@@ -328,13 +334,16 @@ bxg10/
 
 + cookie
     - 前提：必须要在同一个域名下面的不同页面
+
     - cookie的2种类型：
         - 会话cookie：cookie会在每一次会话之后之后删除
         - 长期cookie：cookie保存一段时间
+
     - 原生JS：
         - 设置一个会话cookie：document.cookie="id=888";
         - 设置一个长期cookie：document.cookie="name=ccc;expires="+new Date("2017-09-12 08:00:00");
         - 获取cookie：document.cookie：获取到当前域名下面的所有cookie值
+
     - jquery.cookie.js操作cookie
         - jquery.cookie.js依赖于jquery
         - 设置一个会话cookie:$.cookie("键","值")
@@ -348,16 +357,12 @@ bxg10/
 + JSON.stringify(对象)：将一个对象序列化为一个json数据
 + JSON.parse("json数据")：将一个json数据转化为一个对象
 
-### 项目类型
-+ 企业级项目：企业内部员工，企业客户-->ERP/OA/CRM/CMS/财务网站
-    - 所有的企业级项目都必须登录才能访问
-+ 互联网项目：全部互联网用户
 
 ### 链式编程
 + $("div").css("color","red").attr("tc_id",666)
 
-### es5之前要获取当前函数本身，可以在函数体内部通过arguments.callee
-+ es5规定了严格模式，严格模式中禁止使用callee/caller
+### ES5之前要获取当前函数本身，可以在函数体内部通过arguments.callee
++ ES5制定了严格模式，严格模式中禁止使用callee/caller
 + 在严格模式下面如何获取当前函数？
 
 ```js
@@ -377,10 +382,20 @@ bxg10/
     console.log(typeof f2);     //f2不存在，-->"undefined"
 ```
 
+### 项目类型
++ 企业级项目：企业内部员工，企业客户-->ERP/OA/CRM/CMS/财务网站
+    - 所有的企业级项目都必须登录才能访问
++ 互联网项目：全部互联网用户
+
+
+
 ## 面试题：
 ### call/apply的异同？
+
 ### localStorage/sessionStorage的区别
+
 ### h5新特性
+
 ### post/get请求之间的区别？
 + get请求的参数作为url地址的一部分
 + get请求相对不太安全，常用于传入一些安全性不高的参数(id)
@@ -393,9 +408,12 @@ bxg10/
 ### localtion对象常用的属性、方法
 + location.href="页面地址"	页面跳转
 + location.reload();		页面刷新
-+ location.search		获取get请求的参数	http://www.baidu.com?name=ccc&id=666-->"?name=ccc&id=666"
-+ location.hash		获取锚点/锚名		http://www.baidu.com#ccc	-->"#ccc"
-+ location.protocol		获取协议的名称		http://www.baidu.com	-->"http:"
++ location.search		获取get请求的参数
+    - `http://www.baidu.com?name=ccc&id=666`-->"?name=ccc&id=666"
++ location.hash		获取锚点/锚名
+    - `http://www.baidu.com#ccc`	-->"#ccc"
++ location.protocol		获取协议的名称
+    - `http://www.baidu.com`	-->"http:"
 + location.pathname		获取路径名称
 
 ### ajax的优缺点
@@ -418,7 +436,6 @@ bxg10/
 + h5：window.postMessage
 
 
-### cookie不能保存安全性较高的内容，因为这样的方式不安全
-+ 不能保存密码，尤其是不能明文保存密码
-    - 12306明文保存密码，数据库被攻陷了
-+ 甚至在一些安全性做的比较好的网站中，通过http请求发送密码的时候，会浏览器端进行加密，然后加密传输；在服务器中进行加密，加密存储在数据库中
+
+
+
