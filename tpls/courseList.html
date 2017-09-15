@@ -6,25 +6,27 @@
             <li class="active">课程列表</li>
         </ol>
         <div class="list-group">
-            <li class="list-group-item">
-                <div class="media">
-                    <!--左侧-->
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="imgs/pic.jpg" width="240" height="120">
-                        </a>
+           {{each result v}}
+                <li class="list-group-item">
+                    <div class="media">
+                        <!--左侧-->
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="{{v.cs_cover=='http://static.botue.com/images/cover/?'?'imgs/course.png':v.cs_cover}}" width="240" height="120">
+                            </a>
+                        </div>
+                        <!--右侧-->
+                        <div class="media-body">
+                            <h4 class="media-heading">{{v.cs_name}}
+                                <button class="btn btn-success">课时信息</button>
+                                <button class="btn btn-primary">课程基本信息</button>
+                            </h4>
+                            <h4>————讲师：{{v.tc_name}}</h4>
+                            <h4>————分类：{{v.cg_name}}</h4>
+                        </div>
                     </div>
-                    <!--右侧-->
-                    <div class="media-body">
-                        <h4 class="media-heading">xxx
-                            <button class="btn btn-success">课时信息</button>
-                            <button class="btn btn-primary">课程基本信息</button>
-                        </h4>
-                        <h4>————讲师：</h4>
-                        <h4>————分类：</h4>
-                    </div>
-                </div>
-            </li>
+                </li>
+           {{/each}}
         </div>
 
     </div>
