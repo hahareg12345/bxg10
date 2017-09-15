@@ -42,8 +42,8 @@
                         <td>{{$value.ct_id}}</td>
                         <td>{{$value.ct_name}}</td>
                         <td>{{$value.ct_video_duration}}</td>
-                        <td>
-                            <button class="btn btn-primary">编辑</button>
+                        <td ct_id="{{$value.ct_id}}">
+                            <button class="btn btn-primary btn-edit">编辑</button>
                         </td>
                     </tr>
                 {{/each}}
