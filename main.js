@@ -47,6 +47,7 @@ require([
     "category/list",        //分类列表
     "course/list",          //课程列表
     "course/add",           //添加课程
+    "common/personal",      //个人中心
     "cookie",
     "bootstrap",
     "datetimepicker",        //日期控件
@@ -54,7 +55,7 @@ require([
     "common/myModal",        //自己写的牛逼哄哄的一个基于bootstrap的模态框插件
     "uploadify"             //uploadify上传插件
 
-],function($,teacherList,categoryList,courseList,courseAdd){
+],function($,teacherList,categoryList,courseList,courseAdd,commonPersonal){
     //template就是arttemplate模板引擎的入口函数
 
 
@@ -132,6 +133,13 @@ require([
         });
 
 
+    });
+
+
+    //完成个人中心：
+    $(".link-personal").on("click",function(){
+
+        commonPersonal();
     })
 
 
