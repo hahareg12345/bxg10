@@ -117,5 +117,22 @@ require([
     $(".profile img").attr("src",userInfo.tc_avatar);
     $(".profile h3").html(userInfo.tc_name);
 
+    //完成退出功能？
+    $(".link-logout").on("click",function(){
+        //1、清除session-->发送ajax请求
+        $.post("/api/logout",{},function(res){
+            if(res.code!=200) throw new Error(res.msg);
+
+
+            //2、清除cookie：jquery.cookie.js
+            $.removeCookie("userInfo");
+
+            //3、页面跳转
+            location.href="login.html";
+        });
+
+
+    })
+
 
 })
