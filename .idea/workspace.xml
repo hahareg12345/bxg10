@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad86a961-6dc5-419a-8592-7834094d9377" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/common/api.js" afterPath="$PROJECT_DIR$/js/common/api.js" />
     </list>
     <ignored path="bxg.iws" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="api.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/common/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="38" column="10" selection-start-line="35" selection-start-column="8" selection-end-line="38" selection-end-column="10" />
+            <state relative-caret-position="412">
+              <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
               <folding>
                 <element signature="e#310#725#0" expanded="false" />
               </folding>
@@ -494,12 +492,12 @@
       <workItem from="1505176641793" duration="25190000" />
       <workItem from="1505349281579" duration="23997000" />
       <workItem from="1505436006989" duration="24055000" />
-      <workItem from="1505522757296" duration="8083000" />
+      <workItem from="1505522757296" duration="8295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225278000" />
+    <option name="totallyTimeSpent" value="225490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -973,8 +971,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/common/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="38" column="10" selection-start-line="35" selection-start-column="8" selection-end-line="38" selection-end-column="10" />
+        <state relative-caret-position="412">
+          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
           <folding>
             <element signature="e#310#725#0" expanded="false" />
           </folding>

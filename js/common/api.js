@@ -7,8 +7,7 @@ define([
     "jquery"
 ], function ($) {
 
-
-    return {
+    var obj={
         /**
          *
          * @param url
@@ -31,17 +30,21 @@ define([
                     throw new Error(res);
                 }
             });
-        },
-
-        get:function(url, data, callback){
-            //如何调用ajax方法？
-            this.ajax(url,"get",data,callback);
-        },
-        post:function(url, data, callback){
-            //如何调用ajax方法？
-            this.ajax(url,"post",data,callback);
         }
-    }
+    };
+
+    var fns=["get","post"];
+    fns.forEach(function(name){
+        //name：方法名
+
+        obj[name]=function(url, data, callback){
+            //如何调用ajax方法？
+            this.ajax(url,name,data,callback);
+        };
+    });
+
+
+    return obj;
 });
 // //main.js
 // require(["common/api"], function (api) {
