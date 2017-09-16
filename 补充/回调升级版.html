@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function f1(callback){
+
+        callback(5);
+    }
+
+
+    f1(function(num){
+
+        //在这个函数内部，要获取5的值
+        //1、通过形参接收
+        console.log(num);
+
+        //2、通过argument获取
+//        console.log(arguments[0]);
+    })
+
+
+
+
+
+</script>
+</html>

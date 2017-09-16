@@ -31,6 +31,15 @@ define([
                     throw new Error(res);
                 }
             });
+        },
+
+        get:function(url, data, callback){
+            //如何调用ajax方法？
+            this.ajax(url,"get",data,callback);
+        },
+        post:function(url, data, callback){
+            //如何调用ajax方法？
+            this.ajax(url,"post",data,callback);
         }
     }
 });

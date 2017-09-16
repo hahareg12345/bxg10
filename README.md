@@ -305,6 +305,18 @@ bxg10/
 + 把第二项的内容更新到页面中
     - 动态拼接DOM元素
 
+### 退出登录
++ 找到功能的入口：点击退出按钮
+	- 给按钮绑定单击事件
+		- 按钮是在index.html直接渲染的，所以js代码应该写在main.js中
+
++ 事件触发的时候：
+	- 清除session-->发送ajax请求
+	- 清除cookie-->jquery.cookie.js：`$.removeCookie`
+	- 页面跳转
+		`location.href="login.html";`
+
+
 ## bootstrap布局
 + 表格布局中
     - `<td rowspan="5">111</td>`  表示该列跨了5行

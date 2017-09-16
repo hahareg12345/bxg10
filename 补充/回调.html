@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function f1(data,callback){
+        if(data==3){
+            callback();
+        }
+    }
+
+
+    f1(3,function(){
+        console.log("333");
+    });
+    //结果：有输出
+
+
+
+
+    f1(5,function(){
+        console.log("555");
+    });
+    //结果：不会没有输出
+
+
+
+
+
+
+
+</script>
+</html>
