@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div class="main" style="width: 600px;height:400px;border:1px solid red;"></div>
+</body>
+<script src="../js/lib/echarts.min.js"></script>
+<script>
+    //获取main元素-->DOM元素
+    var main=document.getElementsByClassName('main')[0];
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(main);
+
+    // 指定图表的配置项和数据
+    var option = {
+        //设置标题部分的内容
+        title : {
+            text: '某站点用户访问来源',
+            subtext: '纯属虚构',
+            x:'right',          //水平方向的对齐方式
+            textStyle:{
+                color:"red"
+            }
+        },
+        //提示框
+//        tooltip : {
+//            trigger: 'item',
+//            formatter: "{a} <br/>{b} : {c} ({d}%)"
+//        },
+
+        //图例
+        legend: {
+            orient: 'horizontal',     //垂直:vertical  水平:horizontal
+            left: 'left',
+            //数组中数据的个数决定了图例的个数
+            data: ['直接访问v5','邮件营销']     //这里的数据值必须要跟数据中的name值一一对应
+        },
+        series : [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                //饼图的数据
+                data:[
+                    {value:335, name:'直接访问v5'},
+                    {value:310, name:'邮件营销'}
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</html>

@@ -26,7 +26,10 @@ require.config({
 
         //UEditor依赖的2个js文件路径
         ueConf:"../assets/UEditor/ueditor.config",
-        ueAll:"../assets/UEditor/ueditor.all"
+        ueAll:"../assets/UEditor/ueditor.all",
+
+        //配置了echarts的路径
+        echarts:"lib/echarts.min"
     },
     shim:{
         //在以后加载bootstrap的时候，先读取jquery的内容
@@ -55,6 +58,7 @@ require([
     "course/list",          //课程列表
     "course/add",           //添加课程
     "common/personal",      //个人中心
+    "chart",                //图表统计模块
     "cookie",
     "bootstrap",
     "datetimepicker",        //日期控件
@@ -64,7 +68,7 @@ require([
     "ueConf",
     "ueAll"
 
-],function($,teacherList,categoryList,courseList,courseAdd,commonPersonal){
+],function($,teacherList,categoryList,courseList,courseAdd,commonPersonal,chart){
     //template就是arttemplate模板引擎的入口函数
 
 
@@ -98,7 +102,9 @@ require([
                 break;
             //图表统计
             case "chart":
-                $(".main .content-container").html("图表统计")
+                chart();
+
+                //
                 break;
         }
 

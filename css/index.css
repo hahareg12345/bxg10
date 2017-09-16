@@ -18,7 +18,7 @@
   height: 80px;
   text-align: center;
 }
-.main {
+body > .main {
   position: absolute;
   left: 200px;
   right: 0;
@@ -26,7 +26,7 @@
   min-height: 500px;
   /*如果容器中内容高度不够500，最低也有500，如果内容高度超过了500，那么以内容的高度为准*/
 }
-.main > .header {
+body > .main > .header {
   background-color: lightblue;
 }
 .breadcrumb {
