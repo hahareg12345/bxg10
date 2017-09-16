@@ -2,7 +2,8 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">个人中心</h4>
             </div>
             <div class="modal-body">
@@ -11,6 +12,12 @@
                         <label class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">
                             <input type="text" name="tc_name" value="{{tc_name}}" class="form-control">
+                            <input type="hidden" name="tc_id" value="{{tc_id}}">
+
+                            <input type="hidden" name="tc_province" value="{{tc_province}}">
+                            <input type="hidden" name="tc_city" value="{{tc_city}}">
+                            <input type="hidden" name="tc_district" value="{{tc_district}}">
+                            <input type="hidden" name="tc_hometown" value="{{tc_hometown}}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -28,7 +35,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">自我介绍</label>
                         <div class="col-sm-10">
-                            <textarea name="tc_introduce" id="" rows="5" class="form-control">{{tc_introduce}}</textarea>
+                            <script id="introduceContainer" name="tc_introduce" type="text/plain"></script>
                         </div>
                     </div>
                     <div class="form-group">
@@ -54,7 +61,8 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">入职日期</label>
                         <div class="col-sm-10">
-                            <input type="text" name="tc_join_date" value="{{tc_join_date}}" readonly="readonly" class="form-control">
+                            <input type="text" name="tc_join_date" value="{{tc_join_date}}" readonly="readonly"
+                                   class="form-control">
                         </div>
                     </div>
 

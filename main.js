@@ -22,7 +22,11 @@ require.config({
         //配置日期控件语言包的路径
         datetimepickerlang:"../assets/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN",
 
-        uploadify:"../assets/uploadify/jquery.uploadify"
+        uploadify:"../assets/uploadify/jquery.uploadify",
+
+        //UEditor依赖的2个js文件路径
+        ueConf:"../assets/UEditor/ueditor.config",
+        ueAll:"../assets/UEditor/ueditor.all"
     },
     shim:{
         //在以后加载bootstrap的时候，先读取jquery的内容
@@ -34,6 +38,9 @@ require.config({
         },
         uploadify:{
             deps:["jquery"]
+        },
+        ueAll:{
+            deps:["ueConf","../assets/UEditor/third-party/zeroclipboard/ZeroClipboard"]
         }
 
     }
@@ -53,7 +60,9 @@ require([
     "datetimepicker",        //日期控件
     "datetimepickerlang",     //日期控件的语言包
     "common/myModal",        //自己写的牛逼哄哄的一个基于bootstrap的模态框插件
-    "uploadify"             //uploadify上传插件
+    "uploadify",             //uploadify上传插件
+    "ueConf",
+    "ueAll"
 
 ],function($,teacherList,categoryList,courseList,courseAdd,commonPersonal){
     //template就是arttemplate模板引擎的入口函数
